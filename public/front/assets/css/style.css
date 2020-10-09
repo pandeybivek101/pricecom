@@ -1,0 +1,139 @@
+header{
+    background-color: #1C448A;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+.logo-container{
+    padding-top: 8px;
+}
+
+.logo-container h2{
+    font-size: 30px;
+}
+
+.top-bar-location-content{
+    padding-top: 15px;
+}
+
+#search-form .form-control{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+    #search-form .input-group{
+        width: 55%;
+        margin: 0 auto;
+    }
+
+
+
+#search-form .btn.btn-outline-secondary{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.jumbtron-section{
+    padding-top: 60px;
+}
+
+section.shop-section{
+    background-color: #f1f1f1;
+}
+
+.product-card img{
+    width:70%;
+}
+
+.product-price .price span{
+    color:red;
+}
+
+.product-card{
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+
+.product-card .product-model{
+    padding-top: 50px;
+    padding-bottom: 15px;
+
+}
+
+.fa.fa-search{
+    padding-right:5px;
+}
+
+button i,button.btn-outline-secondary{
+    color:#fff;
+}
+
+button.btn-outline-secondary{
+    
+}
+.shop-section{
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+footer{
+    background-color: #1C448A;
+    color:#fff;
+}
+
+footer .row{
+    padding-top: 15px;
+}
+
+.company-motto{
+    text-align:justify;
+}
+
+.social-list{
+    list-style-type: none;
+    padding-left: 0px;
+}
+.social-list li{
+    padding-bottom:8px;
+}
+
+
+@media(max-width:767px){
+    .logo-image{
+        padding-top:8px;
+    }
+    .logo-image h2{
+        font-size:18px;
+    }
+
+    .jumbtron-section .upper-text h3{
+        font-size: 22px;
+    }
+
+    #search-form .input-group{
+        width:100%;
+    }
+
+    .product-model .brand-name,.product-price{
+        font-size: 12px;
+    }
+
+    .product-card .product-model {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    footer .col-md-3{
+        padding-bottom: 30px;
+    }
+
+    footer .col-md-3:first-child{
+        padding-bottom: 60px;
+    }
+
+}
+
