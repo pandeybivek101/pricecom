@@ -23,13 +23,11 @@ class ProductController extends Controller
             $product->ram=$data['ram'];
             $product->storage=$data['storage'];
             $product->display=$data['display'];
+            $product->discount_type=$data['discount_type'];
+            $product->discount=$data['discount'];
             $product->users=Auth::User()->ID;
             if ($request->hasfile('image')){
-                $file=$request->file('image');
-                $extension=$file->getClientOriginalExtension();
-                $filename=time().'.'.$extension;
-                $file->move('uploads/products/', $filename);
-                $product->image=$filename;
+                $product->image=image_store($data['image']);
             }
             $product->save();
             return redirect()->back();
@@ -53,17 +51,7 @@ class ProductController extends Controller
         $product=Product::findorfail($id);
         if($request->isMethod('post')){
             $data=$request->all();
-
-            if($request->hasfile('image')){
-                $file=$data['image'];
-                $extension=$file->getClientOriginalExtension();
-                $filename=time().'.'.$extension;
-                $file->move('uploads/products/', $filename);
-            }else{
-                $filename=$data['old_image'];
-            }
-
-            print_r($filename);
+            $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
             Product::where('id', $id)->update([
                 'title'=>$data['title'],
                 'description'=>$data['description'],
@@ -75,6 +63,8 @@ class ProductController extends Controller
                 'storage'=>$data['storage'],
                 'display'=>$data['display'],
                 'image'=>$filename,
+                'discount_type'=>$data['discount_type'],
+                'discount'=>$data['discount'],
             ]);
             return redirect()->back();
         }

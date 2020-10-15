@@ -16,6 +16,12 @@
         <input type="number" name='ram' placeholder='ram'><br>
         <input type="number" name='storage' placeholder='storage'><br>
         <input type="display" name="display" placeholder='display'><br>
+        <select name="discount_type" id="">
+        <option value="">None</option>
+        <option value="percent">Percent</option>
+        <option value="flat">Flat</option>
+        </select>
+        <input type="number" name='discount' placeholder='Discount'>
         <input class="btn btn-primary"  type="file" name="image" >
         <textarea name="description" id="" cols="30" rows="10"></textarea><br>
         <input type="submit" value="summit">

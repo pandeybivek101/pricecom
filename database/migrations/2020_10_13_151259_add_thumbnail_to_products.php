@@ -15,7 +15,7 @@ class AddThumbnailToProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->string('image');
+            $table->string('image')->nullable;
         });
     }
 

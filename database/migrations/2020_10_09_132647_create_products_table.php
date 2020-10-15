@@ -17,13 +17,15 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->string('models');
             $table->string('brands');
             $table->string('series');
             $table->integer('generation');
             $table->integer('ram');
             $table->integer('storage');
+            $table->string('discount_type')->nullable();
+            $table->string('discount')->default(0);
             $table->integer('display');
             $table->foreignId('users')->consrained()->onDelete('set null')->nullable();
         });

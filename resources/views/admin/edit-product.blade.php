@@ -19,7 +19,21 @@
         <input class="btn btn-primary"  type="file" name="image" >
         <textarea name="description" id="" cols="30" rows="10">{{$product->description}}</textarea><br>
         <input type='hidden'  type="file" name="old_image" value='{{$product->image}}'>
+        <select name="discount_type" id="">
+        <option value="" @php if($product->discount_type=="") echo 'selected ' @endphp >None</option>
+        <option value="percent" @php if($product->discount_type=="percent") echo "selected" @endphp>Percent</option>
+        <option value="flat" @php if($product->discount_type=="flat") echo "selected" @endphp>Flat</option>
+        </select>
+        <input type="number" name='discount' placeholder='Discount' @if($product->discount_type=="") value='0' @else value='{{$product->discount}}' @endif '>
         <input type="submit" value="summit">
+    </form>
+
+
+    <h3>for common product</h3>
+    <form action="">
+    @csrf
+    <input type="text" name='url' placeholder='Enter a url'>
+    <input type='submit' name='submit' value='submit'>
     </form>
 
 </body>
