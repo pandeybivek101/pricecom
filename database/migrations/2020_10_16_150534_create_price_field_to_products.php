@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWebsitesTable extends Migration
+class CreatePriceFieldToProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateWebsitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('websites', function (Blueprint $table) {
+        Schema::create('price_field_to_products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('url');
-            $table->string('logo_url');
-            $table->foreignId('users')->consrained()->onDelete('set null')->nullable();
         });
     }
 
@@ -30,6 +26,6 @@ class CreateWebsitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('websites');
+        Schema::dropIfExists('price_field_to_products');
     }
 }

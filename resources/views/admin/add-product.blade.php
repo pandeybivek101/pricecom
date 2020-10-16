@@ -15,6 +15,7 @@
         <input type="number" name='generation' placeholder='generation'><br>
         <input type="number" name='ram' placeholder='ram'><br>
         <input type="number" name='storage' placeholder='storage'><br>
+        <input type="number" name='price' placeholder='Price'><br>
         <input type="display" name="display" placeholder='display'><br>
         <select name="discount_type" id="">
         <option value="">None</option>

@@ -34,13 +34,13 @@ class HomeController extends Controller
         });*/
 
 
-        $crawler = Goutte::request('GET', 'https://www.sastodeal.com/alpha-home-mixer-grinder-magic-550-watt-3-jar-alpha-mx-072.html');
+        /*$crawler = Goutte::request('GET', 'https://www.sastodeal.com/alpha-home-mixer-grinder-magic-550-watt-3-jar-alpha-mx-072.html');
         
         $nodes = $crawler->filter('.product-info-main');
         $nodes->each(function ($item) {
             $item->text();
 
-        });
+        });*/
         
         
         return view('home.index');

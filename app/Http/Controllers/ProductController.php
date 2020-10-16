@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Common;
+use App\Models\Website;
 use Auth;
 
 
@@ -23,9 +25,10 @@ class ProductController extends Controller
             $product->ram=$data['ram'];
             $product->storage=$data['storage'];
             $product->display=$data['display'];
+            $product->price=$data['price'];
             $product->discount_type=$data['discount_type'];
             $product->discount=$data['discount'];
-            $product->users=Auth::User()->ID;
+            $product->users=Auth::id();
             if ($request->hasfile('image')){
                 $product->image=image_store($data['image']);
             }
@@ -49,6 +52,7 @@ class ProductController extends Controller
 
     public function edit_product(Request $request, $id){
         $product=Product::findorfail($id);
+        $website=Website::all();
         if($request->isMethod('post')){
             $data=$request->all();
             $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
@@ -58,6 +62,7 @@ class ProductController extends Controller
                 'brands'=>$data['brand'],
                 'series'=>$data['series'],
                 'models'=>$data['models'],
+                'price'=>$data['price'],
                 'generation'=>$data['generation'],
                 'ram'=>$data['ram'],
                 'storage'=>$data['storage'],
@@ -68,7 +73,21 @@ class ProductController extends Controller
             ]);
             return redirect()->back();
         }
-        return view('admin.edit-product')->with(compact('product'));
+        return view('admin.edit-product')->with(compact('product', 'website'));
     }
+
+    public function add_common(Request $request){
+        if($request->isMethod('post')){
+            $data=$request->all();
+            $common=new Common();
+            $common->product_url=$data['url'];
+            $common->website_id=$data['website_name'];
+            $common->users_id=Auth::id();
+            $common->save();
+            return redirect()->back();
+        }
+        return view('admin.edit-product');
+    }
+    
     
 }

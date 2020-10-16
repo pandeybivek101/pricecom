@@ -23,7 +23,8 @@ class CreateProductsTable extends Migration
             $table->string('series');
             $table->integer('generation');
             $table->integer('ram');
-            $table->integer('storage');
+            $table->string('storage');
+            $table->integer('price');
             $table->string('discount_type')->nullable();
             $table->string('discount')->default(0);
             $table->integer('display');

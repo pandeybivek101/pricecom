@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,11 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('dashboard/view-product', [ProductController::class, 'view_product'])->name('view-product');
     Route::match(['get', 'post'], 'dasbhoard/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete-product');
     Route::match(['get', 'post'], 'dashboard/edit-product/{id}', [ProductController::class, 'edit_product'])->name('edit-product');
-
+    Route::match(['get', 'post'], 'dashboard/add-website', [WebsiteController::class, 'store'])->name('website-create');
+    Route::get('dashboard/view-websites', [WebsiteController::class, 'show'])->name('view-website');
+    Route::match(['get', 'post'], 'dashboard/edit-website/{id}', [WebsiteController::class, 'update'])->name('edit-website');
+    Route::match(['get', 'post'], 'dashboard/delete-website/{id}', [WebsiteController::class, 'destroy'])->name('delete-website');
+    Route::match(['get', 'post'], 'dashboard/add-common', [ProductController::class, 'add_common'])->name('add_common');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
