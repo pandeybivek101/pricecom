@@ -45,7 +45,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files":[
-            "app/Helper/crud_helper.php"
+            "app/Helper/crud_helper.php",
+            "app/Helper/crawl.php"
         ]
     },
     "autoload-dev": {

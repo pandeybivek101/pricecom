@@ -21,6 +21,7 @@ use App\Http\Controllers\WebsiteController;
 });*/
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/products/{id}', [ProductController::class, 'detail'])->name('detail');
 
 Route::group(['middleware'=>['auth']], function(){
     Route::match(['get', 'post'], 'dashboard/add-product', [ProductController::class, 'add_product'])->name('add-product');
