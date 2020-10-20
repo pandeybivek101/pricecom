@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->string('discount_type')->nullable();
             $table->string('discount')->default(0);
             $table->integer('display');
+            $table->string('image')->nullable();
             $table->foreignId('users')->consrained()->onDelete('set null')->nullable();
         });
     }

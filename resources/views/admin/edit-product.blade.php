@@ -39,6 +39,7 @@
     @foreach($website as $web)
     <option value="{{$web->id}}">{{$web->name}}</option>
     @endforeach
+    <input type='hidden' value="{{$product->id}}" name='product_id'>
     </select>
     <input type='submit' name='submit' value='submit'>
     </form>

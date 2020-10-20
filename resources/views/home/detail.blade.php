@@ -52,22 +52,24 @@
                     </div>
                 </div>
                 <div class='internal-similar'>
+                    @foreach($commons as $common)
                     <div class="row similar">
                         <div class='col-md-4'>
                             <div class='similar-logo'>
-                                <img src="{{asset('front/assets/images/esewa_logo.png')}}" alt="">
+                                <img src="{{$common->logo_url}}" alt="">
                             </div>
-                            <div class='logo-name'><a href="">Esewa</a></div>
+                            <div class='logo-name'><a href="">{{$common->name}}</a></div>
                         </div>
                         <div class='col-md-4'>
                             <div class='old-price'>Rs 12000</div>
                             <div class='new-price'>Rs 11000</div>
                         </div>
                         <div class='col-md-4'>
-                            <div class="button-store"><button class='goto-store'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Buy From Store</button></div>
+                            <div class="button-store"><a href='{{$common->product_url}}' class='goto-store'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Buy From Store</a></div>
                         </div>
                     </div>
-                    <div class="row similar">
+                    @endforeach
+                    <!--<div class="row similar">
                         <div class='col-md-4'>
                             <div class='similar-logo'>
                                 <img src="https://www.sastodeal.com/media/logo/stores/1/SDLogo_White-Logo.png" alt="">
@@ -81,8 +83,8 @@
                         <div class='col-md-4'>
                             <div class="button-store"><button class='goto-store'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Buy From Store</button></div>
                         </div>
-                    </div>
-                    <div class="row similar">
+                    </div>-->
+                    <!--<div class="row similar">
                         <div class='col-md-4'>
                             <div class='similar-logo'>
                                 <img src="assets/images/esewa_logo.png" alt="">
@@ -96,7 +98,7 @@
                         <div class='col-md-4'>
                             <div class="button-store"><button class='goto-store'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Buy From Store</button></div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
         </div>
     </section>

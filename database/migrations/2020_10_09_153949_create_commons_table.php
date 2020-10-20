@@ -16,8 +16,9 @@ class CreateCommonsTable extends Migration
         Schema::create('commons', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->longText('description')->nullable();
-            $table->foreignId('website_id')->constrained()->onDelete('cascade');
+            $table->longtext('product_url');
+            $table->foreignId('products_id')->constrained()->onDelete('cascade');
+            $table->foreignId('websites_id')->constrained()->onDelete('cascade');
             $table->foreignId('users_id')->constrained()->onDelete('cascade');
         });
     }
