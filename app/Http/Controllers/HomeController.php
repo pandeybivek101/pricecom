@@ -57,7 +57,7 @@ class HomeController extends Controller
             break;
 
             default:
-              echo "invalid";
+              echo "invali";
           }
     }
 
