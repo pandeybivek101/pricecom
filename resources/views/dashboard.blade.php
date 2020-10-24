@@ -1,858 +1,558 @@
 @extends('layouts.admin.admin-layout')
 
 @section('content')
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard v2</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <div class="dashboard-header-title mb-30">
+                <h5>Dashboard</h5>
+            </div>
+        </div>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Info boxes -->
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">CPU Traffic</span>
-                <span class="info-box-number">
-                  10
-                  <small>%</small>
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
-
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card widget-flat">
+                <div class="card-body">
+                    <div class="float-right">
+                        <svg id="icon-home-26" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign card-icon">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
                     </div>
-                  </div>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-8">
-                    <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                    <h5 class="mt-0 font-15" title="Revenue">Revenue</h5>
+                    <h3 class="mt-3 mb-3 font-22">$7,254</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-info mr-1">
+                            <i class="fa fa-long-arrow-up" aria-hidden="true"> 8.0%</i></span>
+                        <span class="text-nowrap">Last month</span>
                     </p>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-xl-3 col-md-6">
+            <div class="card widget-flat">
+                <div class="card-body">
+                    <div class="float-right">
+                        <svg id="icon-home-27" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up card-icon">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <h5 class="mt-0 font-15" title="Growth">Growth</h5>
+                    <h3 class="mt-3 mb-3 font-22">+ 30.56%</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success mr-2">
+                            <i class="fa fa-long-arrow-up" aria-hidden="true"> 5.0%</i></span>
+                        <span class="text-nowrap">Last month</span>
+                    </p>
+                </div>
+            </div>
+        </div> <!-- end col-->
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card widget-flat ">
+                <div class="card-body">
+                    <div class="float-right">
+                        <svg id="icon-home-28" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users card-icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+
+                    </div>
+                    <h6 class="font-15 mt-0" title="Customers">Customers</h6>
+                    <h3 class="mt-3 mb-3 font-22">36,254</h3>
+                    <p class="mb-0">
+                        <span class="text-danger mr-1">
+                            <i class="fa fa-long-arrow-up " aria-hidden="true"> 6.1%</i></span>
+                        <span class="">Last month</span>
+                    </p>
+                </div>
+            </div>
+        </div> <!-- end col-->
+
+        <div class="col-xl-3 col-md-6">
+            <div class="card widget-flat">
+                <div class="card-body">
+                    <div class="float-right">
+                        <svg id="icon-home-29" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award card-icon">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <h5 class=" mt-0 font-15" title="Revenue">Revenue</h5>
+                    <h3 class="mt-3 mb-3 font-22">$10,245</h3>
+                    <p class="mb-0">
+                        <span class="text-primary mr-1">
+                            <i class="fa fa-long-arrow-up" aria-hidden="true"> 15.2%</i></span>
+                        <span class="">Last month</span>
+                    </p>
+                </div>
+            </div>
+        </div> <!-- end col-->
+    </div>
+
+    <div class="row">
+        <!-- Column -->
+        <div class="col-lg-9">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">User Statistics</h5>
                     <div class="chart">
-                      <!-- Sales Chart Canvas -->
-                      <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                    </div>
-                    <!-- /.chart-responsive -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <p class="text-center">
-                      <strong>Goal Completion</strong>
-                    </p>
-
-                    <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-
-                    <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                      </div>
+                        <canvas id="barChart" style="height:220px"></canvas>
                     </div>
 
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                      </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-3">
+                            <div class="description-block border-right">
+                                <span class="font-12 text-success"><i class="fa fa-caret-up"></i> 20%</span>
+                                <h5 class="font-15 mb-1">$11,000</h5>
+                                <span class="font-13">DAILY SALES</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6 col-sm-3">
+                            <div class="description-block border-right">
+                                <span class="font-12 text-warning"><i class="fa fa-caret-left"></i> 30%</span>
+                                <h5 class="font-15 mb-1">$6,000</h5>
+                                <span class="font-13">WEEKLY SALES</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6 col-sm-3">
+                            <div class="description-block border-right">
+                                <span class="font-12 text-success"><i class="fa fa-caret-up"></i> 60%</span>
+                                <h5 class="font-15 mb-1">$11,000</h5>
+                                <span class="font-13">MONTHLY SALES</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6 col-sm-3">
+                            <div class="description-block">
+                                <span class="font-12 text-danger"><i class="fa fa-caret-up"></i> 50%</span>
+                                <h5 class="font-15 mb-1">$30,000</h5>
+                                <span class="font-13">Yearly SALES</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
                     </div>
+                    <!-- /.row -->
 
-                    <!-- /.progress-group -->
-                    <div class="progress-group">
-                      Send Inquiries
-                      <span class="float-right"><b>250</b>/500</span>
-                      <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                      </div>
-                    </div>
-                    <!-- /.progress-group -->
-                  </div>
-                  <!-- /.col -->
                 </div>
-                <!-- /.row -->
-              </div>
-              <!-- ./card-body -->
-              <div class="card-footer">
-                <div class="row">
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                      <h5 class="description-header">$35,210.43</h5>
-                      <span class="description-text">TOTAL REVENUE</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                      <h5 class="description-header">$10,390.90</h5>
-                      <span class="description-text">TOTAL COST</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                      <h5 class="description-header">$24,813.53</h5>
-                      <span class="description-text">TOTAL PROFIT</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block">
-                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                      <h5 class="description-header">1200</h5>
-                      <span class="description-text">GOAL COMPLETIONS</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-footer -->
             </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
 
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <div class="col-md-8">
-            <!-- MAP & BOX PANE -->
+        <!-- Column -->
+        <div class="col-lg-3">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">US-Visitors Report</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
-                    <!-- Map will be created here -->
-                    <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
-                    </div>
-                  </div>
-                  <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
-                      <h5 class="description-header">8390</h5>
-                      <span class="description-text">Visits</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">30%</h5>
-                      <span class="description-text">Referrals</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">70%</h5>
-                      <span class="description-text">Organic</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div><!-- /.card-pane-right -->
-                </div><!-- /.d-md-flex -->
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <div class="row">
-              <div class="col-md-6">
-                <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-warning">
-                  <div class="card-header">
-                    <h3 class="card-title">Direct Chat</h3>
-
-                    <div class="card-tools">
-                      <span data-toggle="tooltip" title="3 New Messages" class="badge badge-warning">3</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts"
-                              data-widget="chat-pane-toggle">
-                        <i class="fas fa-comments"></i></button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="{{asset('admin/dist/img/user1-128x128.jpg')}}" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Is this template really for free? That's unbelievable!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="{{asset('admin/dist/img/user3-128x128.jpg')}}" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          You better believe it!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="{{asset('admin/dist/img/user1-128x128.jpg')}}" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Working with AdminLTE on a great new app! Wanna join?
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="{{asset('admin/dist/img/user3-128x128.jpg')}}" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          I would love to.
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                    </div>
-                    <!--/.direct-chat-messages-->
-
-                    <!-- Contacts are loaded here -->
-                    <div class="direct-chat-contacts">
-                      <ul class="contacts-list">
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user1-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-right">2/28/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">How have you been? I was...</span>
+                <div class="card-body">
+                    <h5 class="card-title">For The Past 30 Days</h5>
+                    <div class="statistic-right-area">
+                        <div class="dash-widget-visits"></div>
+                        <div class="past-statistic-an mt-30 d-flex justify-content-between">
+                            <div class="past-statistic-ctn">
+                                <h3 class="font-16 mb-1"><span class="counter">3,20,000</span></h3>
+                                <p class="font-13">Page Views</p>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user7-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-right">2/23/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I will be waiting for...</span>
+                            <div class="past-statistic-graph">
+                                <div class="stats-bar"></div>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user3-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nadia Jolie
-                                <small class="contacts-list-date float-right">2/20/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I'll call you back at...</span>
+                        </div>
+                        <div class="past-statistic-an d-flex justify-content-between">
+                            <div class="past-statistic-ctn">
+                                <h3 class="font-16 mb-1"><span class="counter">1,03,000</span></h3>
+                                <p class="font-13">Total Clicks</p>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user5-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nora S. Vans
-                                <small class="contacts-list-date float-right">2/10/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Where is your new...</span>
+                            <div class="past-statistic-graph">
+                                <div class="stats-line"></div>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user6-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                John K.
-                                <small class="contacts-list-date float-right">1/27/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Can I take a look at...</span>
+                        </div>
+                        <div class="past-statistic-an d-flex justify-content-between">
+                            <div class="past-statistic-ctn">
+                                <h3 class="font-16 mb-1"><span class="counter">24,00,000</span></h3>
+                                <p class="font-13">Site Visitors</p>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="{{asset('admin/dist/img/user8-128x128.jpg')}}">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Kenneth M.
-                                <small class="contacts-list-date float-right">1/4/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Never mind I found...</span>
+                            <div class="past-statistic-graph">
+                                <div class="stats-bar-2"></div>
                             </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                      </ul>
-                      <!-- /.contacts-list -->
+                        </div>
                     </div>
-                    <!-- /.direct-chat-pane -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                    <form action="#" method="post">
-                      <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                        <span class="input-group-append">
-                          <button type="button" class="btn btn-warning">Send</button>
-                        </span>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.card-footer-->
                 </div>
-                <!--/.direct-chat -->
-              </div>
-              <!-- /.col -->
-
-              <div class="col-md-6">
-                <!-- USERS LIST -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Latest Members</h3>
-
-                    <div class="card-tools">
-                      <span class="badge badge-danger">8 New Members</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body p-0">
-                    <ul class="users-list clearfix">
-                      <li>
-                        <img src="{{asset('admin/dist/img/user1-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                        <span class="users-list-date">Today</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user8-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Norman</a>
-                        <span class="users-list-date">Yesterday</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user7-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Jane</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user6-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">John</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user2-160x160.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander</a>
-                        <span class="users-list-date">13 Jan</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user5-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Sarah</a>
-                        <span class="users-list-date">14 Jan</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user4-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Nora</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                      <li>
-                        <img src="{{asset('admin/dist/img/user3-128x128.jpg')}}" alt="User Image">
-                        <a class="users-list-name" href="#">Nadia</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                    </ul>
-                    <!-- /.users-list -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <a href="javascript::">View All Users</a>
-                  </div>
-                  <!-- /.card-footer -->
-                </div>
-                <!--/.card -->
-              </div>
-              <!-- /.col -->
             </div>
-            <!-- /.row -->
-
-            <!-- TABLE: LATEST ORDERS -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Orders</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Popularity</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-info">Processing</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-
-          <div class="col-md-4">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Inventory</span>
-                <span class="info-box-number">5,200</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="far fa-heart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Mentions</span>
-                <span class="info-box-number">92,050</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Downloads</span>
-                <span class="info-box-number">114,381</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-info">
-              <span class="info-box-icon"><i class="far fa-comment"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Direct Messages</span>
-                <span class="info-box-number">163,921</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Browser Usage</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="chart-responsive">
-                      <canvas id="pieChart" height="150"></canvas>
-                    </div>
-                    <!-- ./chart-responsive -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <ul class="chart-legend clearfix">
-                      <li><i class="far fa-circle text-danger"></i> Chrome</li>
-                      <li><i class="far fa-circle text-success"></i> IE</li>
-                      <li><i class="far fa-circle text-warning"></i> FireFox</li>
-                      <li><i class="far fa-circle text-info"></i> Safari</li>
-                      <li><i class="far fa-circle text-primary"></i> Opera</li>
-                      <li><i class="far fa-circle text-secondary"></i> Navigator</li>
-                    </ul>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer bg-white p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      United States of America
-                      <span class="float-right text-danger">
-                        <i class="fas fa-arrow-down text-sm"></i>
-                        12%</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      India
-                      <span class="float-right text-success">
-                        <i class="fas fa-arrow-up text-sm"></i> 4%
-                      </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      China
-                      <span class="float-right text-warning">
-                        <i class="fas fa-arrow-left text-sm"></i> 0%
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.footer -->
-            </div>
-            <!-- /.card -->
-
-            <!-- PRODUCT LIST -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Samsung TV
-                        <span class="badge badge-warning float-right">$1800</span></a>
-                      <span class="product-description">
-                        Samsung 32" 1080p 60Hz LED Smart HDTV.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('admin/dist/img/default-150x150.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Bicycle
-                        <span class="badge badge-info float-right">$700</span></a>
-                      <span class="product-description">
-                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('admin/dist/img/default-150x150.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        Xbox One <span class="badge badge-danger float-right">
-                        $350
-                      </span>
-                      </a>
-                      <span class="product-description">
-                        Xbox One Console Bundle with Halo Master Chief Collection.
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('admin/dist/img/default-150x150.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">PlayStation 4
-                        <span class="badge badge-success float-right">$399</span></a>
-                      <span class="product-description">
-                        PlayStation 4 500GB Console (PS4)
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                </ul>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Products</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
+            <!-- Column -->
         </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    </div>
 
-  <!-- Control Sidebar -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Email Statistics</h5>
+                    <div class="email-statis-wrap text-center">
+                        <div class="email-round-nock">
+                            <input type="text" class="knob" value="0" data-rel="60" data-linecap="round" data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#450b5a" data-thickness=".10" data-readonly="true">
+                        </div>
+                        <div class="email-ctn-nock">
+                            <p class="text-dark mb-0 mt-2 font-13">Total Emails Sent</p>
+                        </div>
+                    </div>
+                    <div class="email-round-gp d-flex justify-content-between">
+                        <div class="email-round-pro">
+                            <div class="email-signle-gp">
+                                <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#00c292" data-thickness=".10" data-readonly="true" disabled>
+                            </div>
+                            <div class="email-ctn-nock">
+                                <p class="text-dark mb-0 mt-2 font-13">Bounce Rate</p>
+                            </div>
+                        </div>
+                        <div class="email-round-pro">
+                            <div class="email-signle-gp">
+                                <input type="text" class="knob" value="0" data-rel="35" data-linecap="round" data-width="90" data-bgcolor="#E4E4E4" data-fgcolor="#f1536e" data-thickness=".10" data-readonly="true" disabled>
+                            </div>
+                            <div class="email-ctn-nock">
+                                <p class="text-dark mb-0 mt-2 font-13">Total Opened</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Timeline -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Activity Timeline</h5>
+                    <!-- Dashboard Active Timeline -->
+                    <ul class="dashboard-active-timeline list-unstyled" id="dashboardTimeline">
+                        <li class="d-flex align-items-center mb-15">
+                            <div class="timeline-icon bg-primary mr-3">
+                                <i class="icon_plus"></i>
+                            </div>
+                            <div class="timeline-info">
+                                <h6 class="mb-1 font-15">Client Meeting</h6>
+                                <span class="font-13">Bonbon macaroon jelly beans gummi bears jelly lollipop apple</span>
+                                <p class="mb-0 font-13">25 mins ago</p>
+                            </div>
+                        </li>
+
+                        <li class="d-flex align-items-center mb-15">
+                            <div class="timeline-icon bg-warning mr-3">
+                                <i class="icon_mic_alt"></i>
+                            </div>
+                            <div class="timeline-info">
+                                <h6 class="mb-1 font-15">Email Newsletter</h6>
+                                <span class="font-13">Cupcake gummi bears soufflé caramels candy</span>
+                                <p class="mb-0 font-13">29 mins ago</p>
+                            </div>
+                        </li>
+
+                        <li class="d-flex align-items-center mb-15">
+                            <div class="timeline-icon bg-danger mr-3">
+                                <i class="icon_mail_alt"></i>
+                            </div>
+                            <div class="timeline-info">
+                                <h6 class="mb-1 font-15">Plan Webinar</h6>
+                                <span class="font-13">Candy ice cream cake caramels candy.</span>
+                                <p class="mb-0 font-13">28 mins ago</p>
+                            </div>
+                        </li>
+
+                        <li class="d-flex align-items-center mb-15">
+                            <div class="timeline-icon bg-success mr-3">
+                                <i class="icon_check"></i>
+                            </div>
+                            <div class="timeline-info">
+                                <h6 class="mb-1 font-15">Launch Website</h6>
+                                <span class="font-13">Candy ice cream cake caramels candy. </span>
+                                <p class="mb-0 font-13">45 mins ago</p>
+                            </div>
+                        </li>
+
+                        <li class="d-flex align-items-center mb-15">
+                            <div class="timeline-icon bg-danger mr-3">
+                                <i class="icon_mail_alt"></i>
+                            </div>
+                            <div class="timeline-info">
+                                <h6 class="mb-1 font-15">Plan Webinar</h6>
+                                <span class="font-13">Candy ice cream cake.</span>
+                                <p class="mb-0 font-13">50 mins ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Recent Post</h5>
+                    <div class="recent-post-single mb-20">
+                        <a href="#">
+                            <div class="recent-post d-flex">
+                                <div class="recent-post-img">
+                                    <img class="post-img" src="{{asset('asets/image/1.png')}}" alt="" />
+                                </div>
+                                <div class="recent-post">
+                                    <h6 class="mb-0 font-15">Lana Smith</h6>
+                                    <p class="mb-0 font-13">Diamurabitur at dolor elementum</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="recent-post-single mb-20">
+                        <a href="#">
+                            <div class="recent-post d-flex">
+                                <div class="recent-post-img">
+                                    <img class="post-img" src="{{asset('asets/image/2.png')}}" alt="" />
+                                </div>
+                                <div class="recent-post">
+                                    <h6 class="mb-0 font-15">Joli Smith</h6>
+                                    <p class="mb-0 font-13">Diamurabitur at dolor elementum</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="recent-post-single mb-20">
+                        <a href="#">
+                            <div class="recent-post d-flex">
+                                <div class="recent-post-img">
+                                    <img class="post-img" src="{{asset('asets/image/3.png')}}" alt="" />
+                                </div>
+                                <div class="recent-post">
+                                    <h6 class="mb-0 font-15">Jhon Deo</h6>
+                                    <p class="mb-0 font-13">Diamurabitur at dolor</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="recent-post-single mb-20">
+                        <a href="#">
+                            <div class="recent-post d-flex">
+                                <div class="recent-post-img">
+                                    <img class="post-img" src="{{asset('asets/image/4.png')}}" alt="" />
+                                </div>
+                                <div class="recent-post">
+                                    <h6 class="mb-0 font-15">Hasra Bin</h6>
+                                    <p class="mb-0 font-13">Diamurabitur at dolor.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="recent-post-single mb-20">
+                        <a href="#">
+                            <div class="recent-post d-flex">
+                                <div class="recent-post-img">
+                                    <img class="post-img" src="{{asset('asets/image/5.png')}}" alt="" />
+                                </div>
+                                <div class="recent-post">
+                                    <h6 class="mb-0 font-15">Sonla Smith</h6>
+                                    <p class="mb-0 font-13">Diamurabitur at dolor</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="recent-post-button text-center">
+                        <a href="#">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-7">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Projects</h6>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Project</th>
+                                    <th>Start Date</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Assign</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Admintro</td>
+                                    <td>01/01/2019</td>
+                                    <td>26/04/2019</td>
+                                    <td><span class="badge badge-danger">Released</span></td>
+                                    <td>David</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Admintro</td>
+                                    <td>01/01/2019</td>
+                                    <td>26/04/2019</td>
+                                    <td><span class="badge badge-success">Review</span></td>
+                                    <td>Carlta </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Admintro</td>
+                                    <td>01/05/2019</td>
+                                    <td>10/09/2019</td>
+                                    <td><span class="badge badge-info">Pending</span></td>
+                                    <td>Jhon</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Admintro</td>
+                                    <td>01/01/2019</td>
+                                    <td>31/11/2019</td>
+                                    <td><span class="badge badge-warning">Work in Progress</span>
+                                    </td>
+                                    <td>Ajoy Das</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Admintro</td>
+                                    <td>01/01/2019</td>
+                                    <td>31/12/2019</td>
+                                    <td><span class="badge badge-danger text-white">Coming soon</span></td>
+                                    <td>Yaretzi</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Admintro</td>
+                                    <td>01/01/2019</td>
+                                    <td>31/12/2019</td>
+                                    <td><span class="badge badge-primary">Coming soon</span></td>
+                                    <td>Nazrul</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h6 class="mb-0">Total Visit</h6>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-nowrap table-borderless table-sm tx-13 tx-nowrap mg-b-0">
+                            <thead>
+                                <tr class="tx-10 tx-spacing-1 tx-color-03 tx-uppercase">
+                                    <th class="wd-5p">Link</th>
+                                    <th>Page Title</th>
+                                    <th class="text-right">Per: (%)</th>
+                                    <th class="text-right">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle"><a class="visit-icon" href="#"><svg id="icon-home-20" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium">Homepage</td>
+                                    <td class="align-middle text-right">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-inverse progress-bar-animated progress-bar-striped" style="width:65%;" role="progressbar"> <span class="sr-only">65% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-right"><span>65.35%</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle"><a class="visit-icon" href="#"><svg id="icon-home-21" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium">Services</td>
+                                    <td class="align-middle text-right">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-success progress-bar-animated progress-bar-striped" style="width: 84%;" role="progressbar"> <span class="sr-only">84% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right"><span>84.97%</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle"><a class="visit-icon" href="#"><svg id="icon-home-22" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium">List of Products</td>
+                                    <td class="align-middle text-right">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-danger progress-bar-animated progress-bar-striped" style="width: 38%;" role="progressbar"> <span class="sr-only">38% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right"><span>38.66%</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle"><a class="visit-icon" href="#"><svg id="icon-home-23" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium">Contact</td>
+                                    <td class="align-middle text-right">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-info progress-bar-animated progress-bar-striped" style="width: 16%;" role="progressbar"> <span class="sr-only">16% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right"><span>16.11%</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle"><a class="visit-icon" href="#"><svg id="icon-home-24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium">Services</td>
+                                    <td class="align-middle text-right">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-warning progress-bar-animated progress-bar-striped" style="width: 84%;" role="progressbar"> <span class="sr-only">84% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right"><span>84.97%</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="align-middle pb-0"><a class="visit-icon" href="#"><svg id="icon-home-25" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link link-icon">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg></a></td>
+                                    <td class="align-middle tx-medium pb-0">Product 50%</td>
+                                    <td class="align-middle text-right pb-0">
+                                        <div class="progress h-6">
+                                            <div class="progress-bar bg-success progress-bar-animated progress-bar-striped" style="width: 50%;" role="progressbar"> <span class="sr-only">50% Complete</span> </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right pb-0"><span>50.34%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- card-body -->
+            </div><!-- card -->
+        </div><!-- col -->
+    </div>
+</div>
+
 @endsection

@@ -73,4 +73,8 @@ class HomeController extends Controller
 
         return view('home.detail')->with(compact('product', 'commons'));
     }
+
+    public function dotan(){
+        return view('home.dotan');
+    }
 }
