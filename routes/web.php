@@ -25,10 +25,17 @@ Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
 
 Route::group(['middleware'=>['auth']], function(){
+
+
+    //for product in admin panel 
     Route::match(['get', 'post'], 'dashboard/add-product', [ProductController::class, 'add_product'])->name('add-product');
     Route::get('dashboard/view-product', [ProductController::class, 'view_product'])->name('view-product');
     Route::match(['get', 'post'], 'dasbhoard/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete-product');
     Route::match(['get', 'post'], 'dashboard/edit-product/{id}', [ProductController::class, 'edit_product'])->name('edit-product');
+    Route::get('dashboard/view-product/{id}', [ProductController::class, 'view_product_detail'])->name('view-product-detail');
+
+    
+    //for website in admin panel
     Route::match(['get', 'post'], 'dashboard/add-website', [WebsiteController::class, 'store'])->name('website-create');
     Route::get('dashboard/view-websites', [WebsiteController::class, 'show'])->name('view-website');
     Route::match(['get', 'post'], 'dashboard/edit-website/{id}', [WebsiteController::class, 'update'])->name('edit-website');

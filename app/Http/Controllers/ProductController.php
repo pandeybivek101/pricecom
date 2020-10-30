@@ -89,6 +89,11 @@ class ProductController extends Controller
             return redirect()->back();
         }
         return view('admin.edit-product');
-    }   
+    }
+    
+    public function view_product_detail(Request $request, $id){
+        $product=Product::findorfail($id);
+        return view('admin.view-product-detail')->with(compact('product'));
+    }
     
 }

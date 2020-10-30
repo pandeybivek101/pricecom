@@ -29,526 +29,137 @@
 </html>-->
 @extends('layouts.admin.admin-layout')
 @section('content')
-<div class="row">
-    <div class="col-12">
-        <div class="page-title-box d-flex justify-content-between mb-30">
-            <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dotan</a></li>
-                    <li class="breadcrumb-item active">Am Chart</li>
-                </ol>
-            </div>
-        </div>
+<div class="page-header">
+    <div class="page-header-title">
+        <h4>Product List</h4>
+    </div>
+    <div class="page-header-breadcrumb">
+        <ul class="breadcrumb-title">
+            <li class="breadcrumb-item">
+                <a href="index-2.html">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">E-Commerce</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">Product List</a>
+            </li>
+        </ul>
     </div>
 </div>
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="row mb-2">
-                    <div class="col-12">
-                        <form class="form-inline d-flex justify-content-between">
-                            <div class="form-group mb-30">
-                                <label for="inputPassword2" class="sr-only">Search</label>
-                                <input type="search" class="form-control" id="inputPassword2" placeholder="Search...">
+<div class="page-body">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Product List</h5>
+                    <button type="button"
+                        class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"
+                        data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add Product
+                    </button>
+                </div>
+                <div class="card-block">
+                    <div class="table-responsive">
+                        <div class="table-content">
+                            <div class="project-table">
+                                <div id="e-product-list_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6"></div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <table id="e-product-list"
+                                                class="table table-striped dt-responsive nowrap dataTable no-footer dtr-inline"
+                                                role="grid" style="width: 1007px;">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                            style="width: 88px;">Image</th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                            style="width: 550px;">Product Name</th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                            style="width: 74px;">Amount</th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                            style="width: 111px;">Stock</th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                            style="width: 64px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                @php $i=0 @endphp
+
+                                                @foreach($products as $pro)
+
+                                                @php $i++ @endphp
+                                                @php $class= $i%2 ==0 ? 'even' : 'odd';  @endphp
+
+                                                    <tr role="row" class="@php echo $class; @endphp">
+                                                        <td class="pro-list-img" tabindex="0">
+                                                            <img src="{{asset('uploads/products/'.$pro->image)}}"
+                                                                class="img-fluid" alt="tbl">
+                                                        </td>
+                                                        <td class="pro-name">
+                                                            <h6>{{$pro->title}}</h6>
+                                                            <span>{{$pro->series}}</span>
+                                                        </td>
+                                                        <td>Rs.{{$pro->price}}</td>
+                                                        <td>
+                                                            <label class="text-danger">Out Of Stock</label>
+                                                        </td>
+                                                        <td class="action-icon">
+                                                            <a href="{{route('edit-product', $pro->id)}}" class="m-r-15 text-muted" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Edit"><i
+                                                                    class="icofont icofont-ui-edit"></i></a>
+                                                            <a href="{{route('delete-product', $pro->id)}}" class="text-muted" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Delete"><i
+                                                                    class="icofont icofont-delete-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-5"></div>
+                                        <div class="col-xs-12 col-sm-12 col-md-7">
+                                            <div class="dataTables_paginate paging_simple_numbers"
+                                                id="e-product-list_paginate">
+                                                <ul class="pagination">
+                                                    <li class="paginate_button page-item previous disabled"
+                                                        id="e-product-list_previous"><a href="#"
+                                                            aria-controls="e-product-list" data-dt-idx="0" tabindex="0"
+                                                            class="page-link">Previous</a></li>
+                                                    <li class="paginate_button page-item active"><a href="#"
+                                                            aria-controls="e-product-list" data-dt-idx="1" tabindex="0"
+                                                            class="page-link">1</a></li>
+                                                    <li class="paginate_button page-item "><a href="#"
+                                                            aria-controls="e-product-list" data-dt-idx="2" tabindex="0"
+                                                            class="page-link">2</a></li>
+                                                    <li class="paginate_button page-item next" id="e-product-list_next">
+                                                        <a href="#" aria-controls="e-product-list" data-dt-idx="3"
+                                                            tabindex="0" class="page-link">Next</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group mx-sm-3 mb-30">
-                                <label for="status-select" class="mr-2">Status</label>
-                                <select class="custom-select" id="status-select">
-                                    <option selected="">Choose...</option>
-                                    <option value="1">Paid</option>
-                                    <option value="2">Awaiting Authorization</option>
-                                    <option value="3">Payment failed</option>
-                                    <option value="4">Cash On Delivery</option>
-                                    <option value="5">Fulfilled</option>
-                                    <option value="6">Unfulfilled</option>
-                                </select>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="table-responsive">
-                    <table class="table table-centered mb-0">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>Order ID</th>
-                                <th data-hide="phone">Customer</th>
-                                <th data-hide="phone">Amount</th>
-                                <th data-hide="phone">Date added</th>
-                                <th data-hide="phone,tablet">Date modified</th>
-                                <th data-hide="phone">Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    3214
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $500.00
-                                </td>
-                                <td>
-                                    03/04/2015
-                                </td>
-                                <td>
-                                    03/05/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    324
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $320.00
-                                </td>
-                                <td>
-                                    12/04/2015
-                                </td>
-                                <td>
-                                    21/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    546
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $2770.00
-                                </td>
-                                <td>
-                                    06/07/2015
-                                </td>
-                                <td>
-                                    04/08/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    6327
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $8560.00
-                                </td>
-                                <td>
-                                    01/12/2015
-                                </td>
-                                <td>
-                                    05/12/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    642
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $6843.00
-                                </td>
-                                <td>
-                                    10/04/2015
-                                </td>
-                                <td>
-                                    13/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    7435
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $750.00
-                                </td>
-                                <td>
-                                    04/04/2015
-                                </td>
-                                <td>
-                                    14/05/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    3214
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $500.00
-                                </td>
-                                <td>
-                                    03/04/2015
-                                </td>
-                                <td>
-                                    03/05/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    324
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $320.00
-                                </td>
-                                <td>
-                                    12/04/2015
-                                </td>
-                                <td>
-                                    21/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    546
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $2770.00
-                                </td>
-                                <td>
-                                    06/07/2015
-                                </td>
-                                <td>
-                                    04/08/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-danger-lighten">Canceled</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    6327
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $8560.00
-                                </td>
-                                <td>
-                                    01/12/2015
-                                </td>
-                                <td>
-                                    05/12/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    642
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $6843.00
-                                </td>
-                                <td>
-                                    10/04/2015
-                                </td>
-                                <td>
-                                    13/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    7435
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $750.00
-                                </td>
-                                <td>
-                                    04/04/2015
-                                </td>
-                                <td>
-                                    14/05/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    324
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $320.00
-                                </td>
-                                <td>
-                                    12/04/2015
-                                </td>
-                                <td>
-                                    21/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-danger-lighten">Expired</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    546
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $2770.00
-                                </td>
-                                <td>
-                                    06/07/2015
-                                </td>
-                                <td>
-                                    04/08/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    6327
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $8560.00
-                                </td>
-                                <td>
-                                    01/12/2015
-                                </td>
-                                <td>
-                                    05/12/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    642
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $6843.00
-                                </td>
-                                <td>
-                                    10/04/2015
-                                </td>
-                                <td>
-                                    13/07/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-success-lighten">Shipped</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
+        </div>
+    </div>
 
-                            <tr>
-                                <td>
-                                    7435
-                                </td>
-                                <td>
-                                    Customer example
-                                </td>
-                                <td>
-                                    $750.00
-                                </td>
-                                <td>
-                                    04/04/2015
-                                </td>
-                                <td>
-                                    14/05/2015
-                                </td>
-                                <td>
-                                    <div class="product-en-btn">
-                                        <a class="badge badge-warning-lighten">Pending</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-eye"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-edit"></i></a>
-                                    <a href="javascript:void(0);" class="action-icon"> <i class="zmdi zmdi-delete"></i></a>
-                                </td>
-                            </tr>
+    <div class="md-overlay"></div>
 
-                        </tbody>
-
-                    </table>
-                </div>
-            </div> <!-- end card-body-->
-        </div> <!-- end card-->
-    </div> <!-- end col -->
 </div>
+
 @endsection

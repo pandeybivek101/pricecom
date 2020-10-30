@@ -12,8 +12,7 @@
         </div>
     </div>
 </div>
-    <div class='col-md-2'></div>
-    <div class="col-md-8">
+    <div class="col-md-12">
             <!-- general form elements disabled -->
             <div class="card card-warning">
               <div class="card-header">
@@ -21,7 +20,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form role="form" id='addproduct' action="{{route('add-product')}}" method='post' enctype="multipart/form-data">
+                <form role="form" id='addproduct' class='dropzone dz-clickable dz-started' action="{{route('add-product')}}" method='post' enctype="multipart/form-data">
                 @csrf
                   <div class="row">
                     <div class="col-sm-6">
@@ -137,11 +136,6 @@
             <!-- /.card -->
           </div>
 
-
-
-
-
-          <div class='col-md-2'></div>
 @endsection
 
 @section('js')
