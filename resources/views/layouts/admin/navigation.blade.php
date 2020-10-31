@@ -278,9 +278,14 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#!">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                                            this.closest('form').submit();" >
                                                 <i class="ti-layout-sidebar-left"></i> Logout
                                             </a>
+                                        </form>
+                                            
                                         </li>
                                     </ul>
                                 </li>
