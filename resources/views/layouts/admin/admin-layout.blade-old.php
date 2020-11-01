@@ -441,6 +441,7 @@
     <script src="{{asset('asets/js/toastr.min.js')}}"></script>
     <script src="{{asset('asets/js/toastr-init.js')}}"></script>
     <script src=”https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.min.js” integrity=”sha256-fegGeSK7Ez4lvniVEiz1nKMx9pYtlLwPNRPf6uc8d+8=” crossorigin=”anonymous”>
+
 </script>
 
     @yield('js')

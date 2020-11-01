@@ -48,6 +48,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/simple-line-icons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ionicons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body>
@@ -360,7 +361,7 @@
 </div>
 <![endif]-->
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/tether/dist/js/tether.min.js')}}"></script>
@@ -402,6 +403,20 @@
     <script src="{{asset('assets/js/demo-12.js')}}"></script>
     <script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.mousewheel.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+    <script>
+    ClassicEditor.create( document.querySelector( '#desc' ) )
+        .then( editor => {
+                console.log( editor );
+        } )
+        .catch( error => {
+                console.error( error );
+        } );
+
+    </script>
+
+    @yield('js')
 </body>
 
 <!-- Mirrored from flatable.phoenixcoded.net/default/dashboard-ecommerce.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 11:44:28 GMT -->
