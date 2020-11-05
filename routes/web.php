@@ -20,6 +20,8 @@ use App\Http\Controllers\WebsiteController;
     return view('welcome');
 });*/
 
+
+//to do list common, popup common and add common, add, crud website
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');

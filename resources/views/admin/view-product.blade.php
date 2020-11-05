@@ -55,98 +55,135 @@
                 <div class="card-header">
                     <h5>Product List</h5>
                     <button type="button"
-                        class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"
+                        onclick='window.location.href="{{route("add-product")}}"' class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"
                         data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add Product
                     </button>
                 </div>
                 <div class="card-block">
-                    <div class="table-responsive">
-                        <div class="table-content">
-                            <div class="project-table">
-                                <div id="e-product-list_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6"></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-6"></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12">
-                                            <table id="e-product-list"
-                                                class="table table-striped dt-responsive nowrap dataTable no-footer dtr-inline"
-                                                role="grid" style="width: 1007px;">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                            style="width: 88px;">Image</th>
-                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                            style="width: 550px;">Product Name</th>
-                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                            style="width: 74px;">Amount</th>
-                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                            style="width: 111px;">Stock</th>
-                                                        <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                            style="width: 64px;">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                    
+                    <div class="dt-responsive table-responsive">
+                        <div id="base-style_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+                                    <div class="dataTables_length" id="base-style_length"><label>Show <select
+                                                name="base-style_length" aria-controls="base-style"
+                                                class="form-control input-sm">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select> entries</label></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div id="base-style_filter" class="dataTables_filter"><label>Search:<input
+                                                type="search" class="form-control input-sm" placeholder=""
+                                                aria-controls="base-style"></label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <table id="base-style" class="table table-striped table-bordered nowrap dataTable"
+                                        role="grid" aria-describedby="base-style_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="base-style"
+                                                    rowspan="1" colspan="1" aria-sort="ascending"
+                                                    aria-label="Name: activate to sort column descending"
+                                                    style="width: 155px;">ID</th>
+                                                <th class="sorting" tabindex="0" aria-controls="base-style" rowspan="1"
+                                                    colspan="1" aria-label="Position: activate to sort column ascending"
+                                                    style="width: 254px;">Image</th>
+                                                <th class="sorting" tabindex="0" aria-controls="base-style" rowspan="1"
+                                                    colspan="1" aria-label="Office: activate to sort column ascending"
+                                                    style="width: 116px;">Title</th>
+                                                <th class="sorting" tabindex="0" aria-controls="base-style" rowspan="1"
+                                                    colspan="1" aria-label="Age: activate to sort column ascending"
+                                                    style="width: 54px;">Price</th>
 
-                                                @php $i=0 @endphp
+                                                <th class="sorting" tabindex="0" aria-controls="base-style" rowspan="1"
+                                                    colspan="1" aria-label="Salary: activate to sort column ascending"
+                                                    style="width: 92px;">Brand</th>
+                                                <th class="sorting" tabindex="0" aria-controls="base-style" rowspan="1"
+                                                colspan="1" aria-label="Salary: activate to sort column ascending"
+                                                style="width: 92px;">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                                @foreach($products as $pro)
+                                            @php $i=0 @endphp
 
-                                                @php $i++ @endphp
-                                                @php $class= $i%2 ==0 ? 'even' : 'odd';  @endphp
+                                            @foreach($products as $pro)
 
-                                                    <tr role="row" class="@php echo $class; @endphp">
-                                                        <td class="pro-list-img" tabindex="0">
-                                                            <img src="{{asset('uploads/products/'.$pro->image)}}"
-                                                                class="img-fluid" alt="tbl">
-                                                        </td>
-                                                        <td class="pro-name">
-                                                            <h6>{{$pro->title}}</h6>
-                                                            <span>{{$pro->series}}</span>
-                                                        </td>
-                                                        <td>Rs.{{$pro->price}}</td>
-                                                        <td>
-                                                            <label class="text-danger">Out Of Stock</label>
-                                                        </td>
-                                                        <td class="action-icon">
-                                                            <a href="{{route('edit-product', $pro->id)}}" class="m-r-15 text-muted" data-toggle="tooltip"
-                                                                data-placement="top" title=""
-                                                                data-original-title="Edit"><i
-                                                                    class="icofont icofont-ui-edit"></i></a>
-                                                            <a href="{{route('delete-product', $pro->id)}}" class="text-muted" data-toggle="tooltip"
-                                                                data-placement="top" title=""
-                                                                data-original-title="Delete"><i
-                                                                    class="icofont icofont-delete-alt"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-5"></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-7">
-                                            <div class="dataTables_paginate paging_simple_numbers"
-                                                id="e-product-list_paginate">
-                                                <ul class="pagination">
-                                                    <li class="paginate_button page-item previous disabled"
-                                                        id="e-product-list_previous"><a href="#"
-                                                            aria-controls="e-product-list" data-dt-idx="0" tabindex="0"
-                                                            class="page-link">Previous</a></li>
-                                                    <li class="paginate_button page-item active"><a href="#"
-                                                            aria-controls="e-product-list" data-dt-idx="1" tabindex="0"
-                                                            class="page-link">1</a></li>
-                                                    <li class="paginate_button page-item "><a href="#"
-                                                            aria-controls="e-product-list" data-dt-idx="2" tabindex="0"
-                                                            class="page-link">2</a></li>
-                                                    <li class="paginate_button page-item next" id="e-product-list_next">
-                                                        <a href="#" aria-controls="e-product-list" data-dt-idx="3"
-                                                            tabindex="0" class="page-link">Next</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            @php $i++ @endphp
+                                            @php $class= $i%2 ==0 ? 'even' : 'odd'; @endphp
+
+                                            <tr role="row" class="@php echo $class; @endphp">
+                                            <td>{{$pro->id}}</td>
+                                                <td>
+                                                    <img src="{{asset('uploads/products/'.$pro->image)}}" height='100' width='100' class="img-fluid" alt="tbl">
+                                                </td>
+                                                <td>{{$pro->title}}</td>
+                                                <td>Rs.{{$pro->price}}</td>
+                                                <td>{{$pro->brands}}</td>
+                                                <td>
+                                                    <a href="{{route('edit-product', $pro->id)}}"
+                                                        class="m-r-15 text-muted" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Edit"><i
+                                                            class="icofont icofont-ui-edit"></i></a>
+                                                    <a href="{{route('delete-product', $pro->id)}}" class="text-muted"
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="Delete"><i
+                                                            class="icofont icofont-delete-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th rowspan="1" colspan="1">ID</th>
+                                                <th rowspan="1" colspan="1">Image</th>
+                                                <th rowspan="1" colspan="1">Title</th>
+                                                <th rowspan="1" colspan="1">Price</th>
+                                                <th rowspan="1" colspan="1">Brand</th>
+                                                <th rowspan="1" colspan="1">Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <div class="dataTables_info" id="base-style_info" role="status" aria-live="polite">
+                                        Showing 21 to 30 of 57 entries</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="base-style_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button page-item previous" id="base-style_previous"><a
+                                                    href="#" aria-controls="base-style" data-dt-idx="0" tabindex="0"
+                                                    class="page-link">Previous</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="1" tabindex="0"
+                                                    class="page-link">1</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="2" tabindex="0"
+                                                    class="page-link">2</a></li>
+                                            <li class="paginate_button page-item active"><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="3" tabindex="0"
+                                                    class="page-link">3</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="4" tabindex="0"
+                                                    class="page-link">4</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="5" tabindex="0"
+                                                    class="page-link">5</a></li>
+                                            <li class="paginate_button page-item "><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="6" tabindex="0"
+                                                    class="page-link">6</a></li>
+                                            <li class="paginate_button page-item next" id="base-style_next"><a href="#"
+                                                    aria-controls="base-style" data-dt-idx="7" tabindex="0"
+                                                    class="page-link">Next</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -163,3 +200,4 @@
 </div>
 
 @endsection
+

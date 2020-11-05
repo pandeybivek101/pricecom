@@ -15,7 +15,9 @@ class ProductController extends Controller
     //
     public function add_product(Request $request){
         if($request->isMethod('post')){
+
             $data=$request->all();
+            print_r($data);exit;
             $product=new Product();
             $product->title=$data['title'];
             $product->description=$data['description'];
@@ -54,6 +56,7 @@ class ProductController extends Controller
     public function edit_product(Request $request, $id){
         $product=Product::findorfail($id);
         $website=Website::all();
+        $similar=Common::where('products_id', $id)->get();
         if($request->isMethod('post')){
             $data=$request->all();
             $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
@@ -74,7 +77,7 @@ class ProductController extends Controller
             ]);
             return redirect()->back();
         }
-        return view('admin.edit-product')->with(compact('product', 'website'));
+        return view('admin.edit-product')->with(compact('product', 'website','similar'));
     }
 
     public function add_common(Request $request){

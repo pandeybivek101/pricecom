@@ -22,7 +22,7 @@
         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" menu-title-theme="theme5">Navigation</div>
         <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="none" subitem-border="true">
             <li class=" ">
-                <a href="sticky.html" data-i18n="nav.sticky-notes.main">
+                <a href="{{route('dashboard')}}" data-i18n="nav.sticky-notes.main">
                     <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                     <!--<span class="pcoded-badge label label-danger">HOT</span>-->

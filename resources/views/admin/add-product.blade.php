@@ -158,11 +158,8 @@
 @endsection
 
 @section('js')
-
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 <script>
-
 
 $('#addproduct').on('submit', function(e) {
     e.preventDefault();
@@ -178,6 +175,7 @@ $('#addproduct').on('submit', function(e) {
         success: function() {
             $('input').val('');
             toastr.success('Product has been successfully added!', 'Thankyou!');
+            
 
         },
         error: function() {
