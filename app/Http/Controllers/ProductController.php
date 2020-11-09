@@ -98,5 +98,25 @@ class ProductController extends Controller
         $product=Product::findorfail($id);
         return view('admin.view-product-detail')->with(compact('product'));
     }
+
+    public function edit_common(Request $request, $id){
+        if($request->isMethod('post')){
+            print_r('dhdhhdhhd');exit;
+        }
+       
+    }
+
+
+    public function edit_com(Request $request, $productid){
+        if($request->isMethod('post')){
+            return  redirect()->back();
+        }
+        return view('admin.edit-product');
+
+    }
+
+    public function delete_common($id){
+        perform_delete($id, Common::class); 
+    }
     
 }

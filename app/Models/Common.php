@@ -9,4 +9,5 @@ class Common extends Model
 {
     use HasFactory;
     protected $table='commons'; 
+    protected $fillable = ['product_url', 'websites_id', 'products_id', 'users_id'];
 }

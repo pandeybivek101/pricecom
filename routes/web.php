@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\CommonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,7 @@ Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
 
 Route::group(['middleware'=>['auth']], function(){
-
-
+    
     //for product in admin panel 
     Route::match(['get', 'post'], 'dashboard/add-product', [ProductController::class, 'add_product'])->name('add-product');
     Route::get('dashboard/view-product', [ProductController::class, 'view_product'])->name('view-product');
@@ -42,7 +42,10 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('dashboard/view-websites', [WebsiteController::class, 'show'])->name('view-website');
     Route::match(['get', 'post'], 'dashboard/edit-website/{id}', [WebsiteController::class, 'update'])->name('edit-website');
     Route::match(['get', 'post'], 'dashboard/delete-website/{id}', [WebsiteController::class, 'destroy'])->name('delete-website');
-    Route::match(['get', 'post'], 'dashboard/add-common/', [ProductController::class, 'add_common'])->name('add_common');
+    Route::match(['get', 'post'], 'dashboard/add-common/', [ProductController::class, 'add_common'])->name('add-common');
+    Route::any('dashboard/edit-com/{id}', [CommonController::class, 'edit_com'])->name('edit-common');
+    Route::delete('dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
+    //Route::delete(['get', 'post'], 'dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -52,6 +52,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/simple-line-icons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ionicons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick-theme.css')}}">
 </head>
 
 <body>
@@ -374,6 +376,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript" src="{{asset('assets/bower_components/slick-carousel/slick/slick.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/pages/product-detail/product-detail.js')}}"></script>
     <script>
         ClassicEditor.create( document.querySelector( '#desc' ) )
         then( editor => {
@@ -382,6 +387,27 @@
             .catch( error => {
                     console.error( error );
             } );
+
+
+        function alertify(){
+            Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+            }
+        })
+        }
     </script>
 
 

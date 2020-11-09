@@ -126,13 +126,17 @@
                                                 <td>Rs.{{$pro->price}}</td>
                                                 <td>{{$pro->brands}}</td>
                                                 <td>
-                                                    <a href="{{route('edit-product', $pro->id)}}"
+
+                                                <a href="{{route('view-product-detail', $pro->id)}}" class="m-r-15 text-muted"
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="view"><i class="icofont icofont-eye-alt f-16 m-0"></i></a>
+                                                    <a href="{{route('view-product-detail', $pro->id)}}"
                                                         class="m-r-15 text-muted" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"><i
                                                             class="icofont icofont-ui-edit"></i></a>
                                                     <a href="{{route('delete-product', $pro->id)}}" class="text-muted"
                                                         data-toggle="tooltip" data-placement="top" title=""
-                                                        data-original-title="Delete"><i
+                                                        data-original-title="Delete" onclick="alertify();"><i
                                                             class="icofont icofont-delete-alt"></i></a>
                                                 </td>
                                             </tr>

@@ -1,149 +1,298 @@
+
 @extends('layouts.admin.admin-layout')
 @section('content')
-<div class="card card-solid">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-              <div class="col-12">
-                <img src="{{asset('/uploads/products/'.$product->image)}}" class="product-image" alt="Product Image">
-              </div>
-              <div class="col-12 product-image-thumbs">
-                <div class="product-image-thumb active"><img src="{{asset('/uploads/products/'.$product->image)}}" width='100' height='100' alt="Product Image"></div>
-                <div class="product-image-thumb"><img src="{{asset('/uploads/products/'.$product->image)}}" width='100' height='100' alt="Product Image"></div>
-                <div class="product-image-thumb"><img src="{{asset('/uploads/products/'.$product->image)}}" width='100' height='100' alt="Product Image"></div>
-                <div class="product-image-thumb"><img src="{{asset('/uploads/products/'.$product->image)}}" width='100' height='100' alt="Product Image"></div>
-                <div class="product-image-thumb"><img src="{{asset('/uploads/products/'.$product->image)}}" width='100' height='100' alt="Product Image"></div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <h3 class="my-3">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+<div class="page-header">
+    <div class="page-header-title">
+        <h4>Product detail</h4>
+    </div>
+    <div class="page-header-breadcrumb">
+        <ul class="breadcrumb-title">
+            <li class="breadcrumb-item">
+                <a href="index-2.html">
+                    <i class="icofont icofont-home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">E-Commerce</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#!">Product Detail</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-              <hr>
-              <h4>Available Colors</h4>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-default text-center active">
-                  <input type="radio" name="color_option" id="color_option1" autocomplete="off" checked="">
-                  Green
-                  <br>
-                  <i class="fas fa-circle fa-2x text-green"></i>
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option2" autocomplete="off">
-                  Blue
-                  <br>
-                  <i class="fas fa-circle fa-2x text-blue"></i>
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option3" autocomplete="off">
-                  Purple
-                  <br>
-                  <i class="fas fa-circle fa-2x text-purple"></i>
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option4" autocomplete="off">
-                  Red
-                  <br>
-                  <i class="fas fa-circle fa-2x text-red"></i>
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option5" autocomplete="off">
-                  Orange
-                  <br>
-                  <i class="fas fa-circle fa-2x text-orange"></i>
-                </label>
-              </div>
 
-              <h4 class="mt-3">Size <small>Please select one</small></h4>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                  <span class="text-xl">S</span>
-                  <br>
-                  Small
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                  <span class="text-xl">M</span>
-                  <br>
-                  Medium
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                  <span class="text-xl">L</span>
-                  <br>
-                  Large
-                </label>
-                <label class="btn btn-default text-center">
-                  <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                  <span class="text-xl">XL</span>
-                  <br>
-                  Xtra-Large
-                </label>
-              </div>
+<div class="page-body">
+    <div class="row">
+        <div class="col-md-12">
 
-              <div class="bg-gray py-2 px-3 mt-4">
-                <h2 class="mb-0">
-                  $80.00
-                </h2>
-                <h4 class="mt-0">
-                  <small>Ex Tax: $80.00 </small>
-                </h4>
-              </div>
-
-              <div class="mt-4">
-                <div class="btn btn-primary btn-lg btn-flat">
-                  <i class="fas fa-cart-plus fa-lg mr-2"></i> 
-                  Add to Cart
+            <div class="card product-detail-page">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-lg-5 col-xs-12">
+                            <div class="port_details_all_img row">
+                                <div class="col-lg-12">
+                                    <div id="big_banner">
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-1.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-2.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-3.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-4.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-5.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-6.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                        <div class="port_big_img">
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-7.jpg')}}"
+                                                alt="Big_ Details">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 product-right">
+                                    <div id="small_banner">
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-1.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-2.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-3.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-4.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-5.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-6.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                        <div>
+                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-7.jpg')}}"
+                                                alt="small-details">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xs-12 product-detail" id="product-detail">
+                            <div class="row">
+                                <div>
+                                    <div class="col-lg-12">
+                                        <span class="txt-muted d-inline-block">Product
+                                            Code: <a href="#!"> PRDT1234 </a>
+                                        </span>
+                                        <span class="f-right">Availablity : <a href="#!"> In Stock </a> </span>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 class="pro-desc">Athena Black & Red
+                                            Polyester Georgette Maxi Dress</h4>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="txt-muted"> Brand : Denim
+                                        </span>
+                                    </div>
+                                    <div class="stars stars-example-css m-t-15 detail-stars col-lg-12">
+                                        <select id="product-view" class="rating-star" name="rating" autocomplete="off">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="text-primary product-price"><i
+                                                class="icofont icofont-cur-dollar"></i>80.00</span>
+                                        <span class="done-task txt-muted">$90.59</span>
+                                        <hr>
+                                        <p>Lorem Ipsum is simply dummy text of the
+                                            printing and typesetting industry. Lorem
+                                            Ipsum has been the industry's standard
+                                            dummy text ever since the 1500s, when an
+                                            unknown printer took a galley of type
+                                            and scrambled it to make a type specimen
+                                            book. It has survived not only five
+                                            centuries.
+                                        </p>
+                                        <hr>
+                                        <h6 class="f-16 f-w-600 m-t-10 m-b-10">
+                                            Quantity</h6>
+                                    </div>
+                                    <div class="col-xl-3 col-sm-12">
+                                        <div class="p-l-0 m-b-25">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number shadow-none"
+                                                        disabled="disabled" data-type="minus" data-field="quant[1]">
+                                                        <span class="icofont icofont-minus m-0"></span>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="quant[1]"
+                                                    class="form-control input-number text-center" value="1">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number shadow-none"
+                                                        data-type="plus" data-field="quant[1]">
+                                                        <span class="icofont icofont-plus m-0"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 mob-product-btn">
+                                        <button type="button" class="btn btn-primary waves-effect waves-light m-r-20">
+                                            <i class="icofont icofont-cart-alt f-16"></i><span class="m-l-10">ADD TO
+                                                CART</span>
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-outline-primary waves-effect waves-light m-r-20">
+                                            <i class="icofont icofont-heart-alt f-16 m-0"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-primary waves-effect waves-light">
+                                            <i class="icofont icofont-eye-alt f-16 m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="btn btn-default btn-lg btn-flat">
-                  <i class="fas fa-heart fa-lg mr-2"></i> 
-                  Add to Wishlist
-                </div>
-              </div>
-
-              <div class="mt-4 product-share">
-                <a href="#" class="text-gray">
-                  <i class="fab fa-facebook-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fas fa-envelope-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fas fa-rss-square fa-2x"></i>
-                </a>
-              </div>
-
             </div>
-          </div>
-          <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
-                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
-                <a class="nav-item nav-link" id="product-rating-tab" data-toggle="tab" href="#product-rating" role="tab" aria-controls="product-rating" aria-selected="false">Rating</a>
-              </div>
-            </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div class="tab-pane fade active show" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh, congue et ante et, commodo mattis lacus. Duis varius finibus purus sed venenatis. Vivamus varius metus quam, id dapibus velit mattis eu. Praesent et semper risus. Vestibulum erat erat, condimentum at elit at, bibendum placerat orci. Nullam gravida velit mauris, in pellentesque urna pellentesque viverra. Nullam non pellentesque justo, et ultricies neque. Praesent vel metus rutrum, tempus erat a, rutrum ante. Quisque interdum efficitur nunc vitae consectetur. Suspendisse venenatis, tortor non convallis interdum, urna mi molestie eros, vel tempor justo lacus ac justo. Fusce id enim a erat fringilla sollicitudin ultrices vel metus. </div>
-              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> Vivamus rhoncus nisl sed venenatis luctus. Sed condimentum risus ut tortor feugiat laoreet. Suspendisse potenti. Donec et finibus sem, ut commodo lectus. Cras eget neque dignissim, placerat orci interdum, venenatis odio. Nulla turpis elit, consequat eu eros ac, consectetur fringilla urna. Duis gravida ex pulvinar mauris ornare, eget porttitor enim vulputate. Mauris hendrerit, massa nec aliquam cursus, ex elit euismod lorem, vehicula rhoncus nisl dui sit amet eros. Nulla turpis lorem, dignissim a sapien eget, ultrices venenatis dolor. Curabitur vel turpis at magna elementum hendrerit vel id dui. Curabitur a ex ullamcorper, ornare velit vel, tincidunt ipsum. </div>
-              <div class="tab-pane fade" id="product-rating" role="tabpanel" aria-labelledby="product-rating-tab"> Cras ut ipsum ornare, aliquam ipsum non, posuere elit. In hac habitasse platea dictumst. Aenean elementum leo augue, id fermentum risus efficitur vel. Nulla iaculis malesuada scelerisque. Praesent vel ipsum felis. Ut molestie, purus aliquam placerat sollicitudin, mi ligula euismod neque, non bibendum nibh neque et erat. Etiam dignissim aliquam ligula, aliquet feugiat nibh rhoncus ut. Aliquam efficitur lacinia lacinia. Morbi ac molestie lectus, vitae hendrerit nisl. Nullam metus odio, malesuada in vehicula at, consectetur nec justo. Quisque suscipit odio velit, at accumsan urna vestibulum a. Proin dictum, urna ut varius consectetur, sapien justo porta lectus, at mollis nisi orci et nulla. Donec pellentesque tortor vel nisl commodo ullamcorper. Donec varius massa at semper posuere. Integer finibus orci vitae vehicula placerat. </div>
-            </div>
-          </div>
+
         </div>
-        <!-- /.card-body -->
-      </div>
+    </div>
 
-@endsection
+    <div class="card product-detail-page">
+        <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active f-18 p-b-0" data-toggle="tab" href="#description" role="tab">Description</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item m-b-0">
+                <a class="nav-link f-18 p-b-0" data-toggle="tab" href="#review" role="tab">Review</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item m-b-0">
+                <a class="nav-link f-18 p-b-0" data-toggle="tab" href="#sizeguide" role="tab">Sizing Guide</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item m-b-0">
+                <a class="nav-link f-18 p-b-0" data-toggle="tab" href="#about" role="tab">About</a>
+                <div class="slide"></div>
+            </li>
+        </ul>
+    </div>
 
 
-@section('css')
-<link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+    <div class="card">
+        <div class="card-block">
+
+            <div class="tab-content bg-white">
+                <div class="tab-pane active" id="description" role="tabpanel">
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining
+                        essentially unchanged.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it.</p>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="col-lg-2">Fabric</td>
+                                <td class="col-lg-10">Midi</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">Color</td>
+                                <td class="col-lg-10">Polyester</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">Sleevs</td>
+                                <td class="col-lg-10">Multi</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">Style</td>
+                                <td class="col-lg-10">Coloured</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">Neck</td>
+                                <td class="col-lg-10">Full</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">Wash</td>
+                                <td class="col-lg-10">Sleevs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="review" role="tabpanel">
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining
+                        essentially unchanged.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it.</p>
+                </div>
+                <div class="tab-pane" id="sizeguide" role="tabpanel">
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining
+                        essentially unchanged.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it.</p>
+                </div>
+                <div class="tab-pane" id="about" role="tabpanel">
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining
+                        essentially unchanged.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 @endsection

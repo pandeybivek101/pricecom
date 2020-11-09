@@ -1,5 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
+<?php  use \App\Http\Controllers\HomeController;  ?>
     <section class="search-box-container">
         <div class="container text-center">
             <form class="main" id='search-form' action='pp.html' method='get'>
@@ -61,6 +62,7 @@
                             <div class='logo-name'><a href="">{{$common->name}}</a></div>
                         </div>
                         <div class='col-md-4'>
+                           
                             <div class='old-price'>Rs 12000</div>
                             <div class='new-price'>Rs 11000</div>
                         </div>

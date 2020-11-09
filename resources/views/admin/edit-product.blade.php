@@ -178,7 +178,7 @@
                 </div>
                 <div class="card-block">
                     <form role="form" id='addcommon' class='dropzone dz-clickable dz-started'
-                        action="{{route('add_common')}}" method='post' enctype="multipart/form-data">
+                        action="{{route('edit-common', $product->id)}}" method='post' enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-sm-4">
@@ -244,10 +244,11 @@
                                             <th>ID</th>
                                             <th>URL</th>
                                             <th>Website</th>
-                                           
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
+                                   
                                     @foreach($similar as $simi)
                                         <tr>
 
@@ -261,12 +262,16 @@
                                                 <label class="">{{$simi->website}}</label>
                                             </td>
                                             <td class="action-icon">
+
                                                 <a class="m-r-15 text-muted" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Edit"><i
                                                         class="icofont icofont-ui-edit md-trigger" data-modal="modal-{{$simi->id}}"></i></a>
-                                                <a href="#!" class="text-muted" data-toggle="tooltip"
+                                                <form method='DELETE' action="{{route('delete-common', $simi->id)}}" id='ddd'>
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button value="submit" class="text-muted" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Delete"><i
-                                                        class="icofont icofont-delete-alt"></i></a>
+                                                        class="icofont icofont-delete-alt" onclick="alertify();"></i></button>
+                                                </a>
                                             </td>
 
                                         </tr>
@@ -284,10 +289,10 @@
     </div>
 
     <div class="md-modal md-effect-13 addcontact" id="modal-13">
-        <form action="{{route('add_common')}}" method='post'>
+        <form action="{{route('add-common')}}" method='post'>
             @csrf
         <div class="md-content">
-            <h3 class="f-26">Update Common</h3>
+            <h3 class="f-26">Add Common</h3>
             <div>
             
                 
@@ -322,9 +327,8 @@
 
     @foreach($similar as $simi)
 
-
     <div class="md-modal md-effect-13 addcontact" id="modal-{{$simi->id}}">
-        <form action="{{route('add_common')}}" method='post'>
+        <form action="{{route('edit-common', $simi->id)}}" method='post'>
             @csrf
         <div class="md-content">
             <h3 class="f-26">Update Common</h3>
@@ -340,16 +344,16 @@
                 <div class="input-group">
                     
                     <select class="form-control" name="website_name">
-                    <option value="">select discount type</option>
+                    <option value="">select website</option>
                     @foreach($website as $web)
-                    <option value="{{$web->id}}">{{$web->name}}</option>
+                    <option value="{{$web->id}}" @if($web->id == $simi->websites_id) selected @endif >{{$web->name}}</option>
                     @endforeach
                 </select>
                    
                 </div>
                 <div class="text-center">
                     <button type="submit"
-                        class="btn btn-primary waves-effect m-r-20 f-w-600 d-inline-block save_btn">Save</button>
+                        class="btn btn-primary waves-effect m-r-20 f-w-600 d-inline-block save_btn">Update</button>
                     <button type="button"
                         class="btn btn-primary waves-effect m-r-20 f-w-600 md-close d-inline-block close_btn">Close</button>
                 </div>
