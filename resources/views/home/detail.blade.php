@@ -61,10 +61,27 @@
                             </div>
                             <div class='logo-name'><a href="">{{$common->name}}</a></div>
                         </div>
+
+                        @php
+                        
+                        $record= HomeController::fetch_data($common->product_url, $common->name, $common); 
+                        
+                        
+                        @endphp
                         <div class='col-md-4'>
-                           
-                            <div class='old-price'>Rs 12000</div>
-                            <div class='new-price'>Rs 11000</div>
+                            <div class='old-new' style='display:flex;'>
+                            @php if(!empty($record[1])){ @endphp
+                            <div class="old-price">@php echo $record[1]; @endphp</div>
+                            @php } @endphp 
+
+                            @php if(!empty($record[2])){ @endphp
+                                <span style='font-size: 13px; position: relative;left: 20px;'>@php echo $record[2]; @endphp</span>
+                            @php } @endphp 
+
+                            </div>   
+                            @php if(!empty($record[0])){ @endphp                    
+                            <div class='new-price'>@php echo $record[0]; @endphp</div>
+                            @php } @endphp 
                         </div>
                         <div class='col-md-4'>
                             <div class="button-store"><a href='{{$common->product_url}}' class='goto-store'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Buy From Store</a></div>

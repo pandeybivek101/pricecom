@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Common;
+use Session;
 use Goutte;
 
 class HomeController extends Controller
@@ -18,9 +19,13 @@ class HomeController extends Controller
     }
 
 
-    
+    public static function crawling($tags, $cra){
+        $final = $cra->filter($tags)->each(function($node) {
+            session::push('data', $node->text());
+            
+        }); 
+    }
 
-    //https://linux4one.com/how-to-install-xampp-on-linux-mint-19
 
     public function scrapvalue($value){
         if(isset($value)){
@@ -30,9 +35,9 @@ class HomeController extends Controller
 
 
     
-    /*public function fetch_data($url, $site, Object $obj){
+    public static function fetch_data($url, $site, Object $obj){
 
-        $crawler = Goutte::request('GET', $url);
+       $crawler = Goutte::request('GET', $url);
 
 
         switch ($site) {
@@ -56,30 +61,18 @@ class HomeController extends Controller
             break;
 
             case "Sasto Deal":
-
-
-                $crawler->filter('.price-box.price-final_price')->each(function ($node) {
-                    $object = json_encode($node->children()->each(function ($product) {
-                        return $product->text();
-                }));
-                
-                $a = json_decode($object);
-                $data[]=$a;
-                
-                });
-
-                print_r($data);
-                
-                return $obj;
-                
-
+                Session::forget('data');
+                self::crawling('span[data-price-type=finalPrice]', $crawler);
+                self::crawling('span[data-price-type=oldPrice]', $crawler);
+                self::crawling('.disPrice', $crawler);
+                return Session::get('data');
             break;
 
             default:
-              echo "invali";
+              echo "invalid";
           }
-    }*/
-
+    }
+    
 
 
     public function detail($id){
@@ -91,39 +84,6 @@ class HomeController extends Controller
             ->select('websites.*', 'commons.product_url')
             ->where('products.id', '=', $id)
             ->get();
-
-
-            //print_r($commons);
-
-            print_r($commons);
-
-            foreach($commons as $common){
-
-               if($common->name=='Sasto Deal'){
-                    $crawler = Goutte::request('GET', $common->product_url);
-                    $crawler->filter('.price-box.price-final_price')->each(function ($node) {
-                        $object = json_encode($node->children()->each(function ($product) {
-                            return $product->text();
-                    }));
-                    $a= json_decode($object);
-
-                    $common=new Common();
-                    $common->discount=$a[2];
-                    $common->old_price=$a[0];
-                    $common->new_price=$a[1];
-
-
-                    //print_r($common);
-                        
-                });
-                
-
-               }
-               
-            }
-
-            print_r($commons);
-
                 
         
         return view('home.detail')->with(compact('product', 'commons'));
