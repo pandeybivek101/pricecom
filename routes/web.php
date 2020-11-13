@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\CommonController;
+use App\Http\Controllers\CalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
 
+
+    Route::get('fullcalendar', [CalenderController::class, 'index']);
+    Route::post('fullcalendar/create', [CalenderController::class, 'create']);
+    Route::post('fullcalendar/update', [CalenderController::class, 'update']);
+    Route::post('fullcalendar/delete', [CalenderController::class, 'destroy']);
+
 Route::group(['middleware'=>['auth']], function(){
     
     //for product in admin panel 
@@ -46,6 +53,15 @@ Route::group(['middleware'=>['auth']], function(){
     Route::any('dashboard/edit-com/{id}', [CommonController::class, 'edit_com'])->name('edit-common');
     Route::delete('dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
     //Route::delete(['get', 'post'], 'dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
+
+
+    /*Route::get('fullcalendar', [CalenderController::class, 'index']);
+    Route::post('fullcalendar/create', [CalenderController::class, 'create']);
+    Route::post('fullcalendar/update', [CalenderController::class, 'update']);
+    Route::post('fullcalendar/delete', [CalenderController::class, 'destroy']);*/
+
+
+
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

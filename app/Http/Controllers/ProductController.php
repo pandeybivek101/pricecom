@@ -115,8 +115,6 @@ class ProductController extends Controller
 
     }
 
-    public function delete_common($id){
-        perform_delete($id, Common::class); 
-    }
+    
     
 }
