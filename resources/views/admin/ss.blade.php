@@ -28,8 +28,11 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script>
 $(document).ready(function() {
+
+    
     var SITEURL = "{{url('/')}}";
-    console.log(SITEURL + "/fullcalendar/create");
+    console.log(SITEURL + "/dashboard/fullcalendar");
+    //console.log(SITEURL + "/fullcalendar/create");
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -37,7 +40,7 @@ $(document).ready(function() {
     });
     var calendar = $('#calendar').fullCalendar({
         editable: true,
-        events: SITEURL + "/fullcalendar",
+        events: SITEURL + "/dashboard/fullcalendar",
         displayEventTime: true,
         editable: true,
         eventRender: function(event, element, view) {
@@ -54,8 +57,9 @@ $(document).ready(function() {
             if (title) {
                 var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                 var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                
                 $.ajax({
-                    url: SITEURL + "/fullcalendar/create",
+                    url: SITEURL + "/dashboard/fullcalendar/create",
                     data: 'title=' + title + '&amp;start=' + start + '&amp;end=' + end,
                     type: "POST",
                     success: function(data) {
@@ -80,7 +84,7 @@ $(document).ready(function() {
             var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
             console.log('deleted');
             $.ajax({
-                url: SITEURL + 'fullcalendar/update',
+                url: SITEURL + '/dashboard/fullcalendar/update',
                 data: 'title=' + event.title + '&amp;start=' + start + '&amp;end=' + end +
                     '&amp;id=' + event.id,
                 type: "POST",
@@ -90,11 +94,12 @@ $(document).ready(function() {
             });
         },
         eventClick: function(event) {
+            //console.log(SITEURL + '/fullcalendar/delete');
             var deleteMsg = confirm("Do you really want to delete?");
             if (deleteMsg) {
                 $.ajax({
                     type: "POST",
-                    url: SITEURL + '/fullcalendar/delete',
+                    url: SITEURL + '/dashboard/fullcalendar/delete',
                     data: "&amp;id=" + event.id,
                     success: function(response) {
                         if (parseInt(response) > 0) {
@@ -104,6 +109,8 @@ $(document).ready(function() {
                     }
                 });
             }
+
+            
         }
     });
 });

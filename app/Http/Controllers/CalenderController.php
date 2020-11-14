@@ -21,30 +21,17 @@ class CalenderController extends Controller
          $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
          return Response::json($data);
         }
-        return view('home.fullcalendar');
+        return view('admin.fullcalendar');
     }
     
    
-    public function create(Request $request)
-    {  
-        $insertArr = [ 'title' => $request->title,
-                       'start' => $request->start,
-                       'end' => $request->end
-                    ];
-
-        
-                   
-        
-        $event = Event::insert($insertArr);
-        //print_r($insertArr);exit;
-        
-        /*$event=new Event;
-        $event->title= $request->title;
-        $event->start = '2020-11-20 22:04:25';
-        $event->end='2020-11-22 22:04:25';
+    public function create(Request $request){  
+        $data=$request->all();
+        $event=new Event();
+        $event->title=$data['title'];
+        $event->start=$data['amp;start'];
+        $event->end=$data['amp;end'];
         $event->save();
-        print_r($event);exit;*/
-
         return Response::json($event);
     }
      
@@ -59,10 +46,10 @@ class CalenderController extends Controller
     } 
  
  
-    public function destroy(Request $request)
+    public function delete(Request $request)
     {
-        $event = Event::where('id',$request->id)->delete();
-   
+        $data=$request->all();
+        $event = Event::where('id',$data['amp;id'])->delete();
         return Response::json($event);
     }    
  

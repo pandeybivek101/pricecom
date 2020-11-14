@@ -54,6 +54,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick-theme.css')}}">
+
+    @yield('css')
 </head>
 
 <body>

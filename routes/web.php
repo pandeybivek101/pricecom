@@ -29,12 +29,14 @@ Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
 
 
-    Route::get('fullcalendar', [CalenderController::class, 'index']);
-    Route::post('fullcalendar/create', [CalenderController::class, 'create']);
-    Route::post('fullcalendar/update', [CalenderController::class, 'update']);
-    Route::post('fullcalendar/delete', [CalenderController::class, 'destroy']);
-
+    
 Route::group(['middleware'=>['auth']], function(){
+
+    Route::get('dashboard/fullcalendar', [CalenderController::class, 'index']);
+    Route::post('dashboard/fullcalendar/create', [CalenderController::class, 'create']);
+    Route::post('dashboard/fullcalendar/update', [CalenderController::class, 'update']);
+    Route::post('dashboard/fullcalendar/delete', [CalenderController::class, 'delete']);
+
     
     //for product in admin panel 
     Route::match(['get', 'post'], 'dashboard/add-product', [ProductController::class, 'add_product'])->name('add-product');
