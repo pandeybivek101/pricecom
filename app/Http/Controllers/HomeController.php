@@ -60,6 +60,28 @@ class HomeController extends Controller
 
             break;
 
+            case 'Smart Doko':
+
+                Session::forget('data');
+                $final = $crawler->filter('.dprice')->each(function($node) {
+                    
+                    $prices = explode('N', $node->text());
+                    session::push('data', $prices['1']);
+                    session::push('data', $prices['2']); 
+                      
+                });
+                return Session::get('data');
+
+            break;
+
+            case 'Thulo':
+                Session::forget('data');
+                self::crawling('.prices-container .ty-price', $crawler);
+                self::crawling('.prices-container .ty-strike', $crawler);
+                self::crawling('.prices-container .ty-save-price', $crawler);
+                return Session::get('data');
+            break;
+
             case "Sasto Deal":
                 Session::forget('data');
                 self::crawling('span[data-price-type=finalPrice]', $crawler);
@@ -84,8 +106,9 @@ class HomeController extends Controller
             ->select('websites.*', 'commons.product_url')
             ->where('products.id', '=', $id)
             ->get();
-                
-        
+
+        Session::forget('data');
+
         return view('home.detail')->with(compact('product', 'commons'));
     }
 
