@@ -166,7 +166,7 @@
 
 
 
-            <div class="card">
+            <!--<div class="card">
                 <div class="card-header">
                     <h5>ADD Common</h5>
                     
@@ -215,7 +215,7 @@
                     </form>
 
                 </div>
-            </div>
+            </div>-->
 
         </div>
     </div>
@@ -228,10 +228,10 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h5>Product List</h5>
+                    <h5>Common List</h5>
                     <button type="button"
                         class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger"
-                        data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add Product
+                        data-modal="modal-13e"> <i class="icofont icofont-plus m-r-5"></i> Add Product
                     </button>
                 </div>
                 <div class="card-block">
@@ -244,6 +244,7 @@
                                             <th>ID</th>
                                             <th>URL</th>
                                             <th>Website</th>
+                                           
                                             
                                         </tr>
                                     </thead>
@@ -266,11 +267,11 @@
                                                 <a class="m-r-15 text-muted" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Edit"><i
                                                         class="icofont icofont-ui-edit md-trigger" data-modal="modal-{{$simi->id}}"></i></a>
-                                                <form method='DELETE' action="{{route('delete-common', $simi->id)}}" id='ddd'>
-                                                <input name="_method" type="hidden" value="DELETE">
-                                                <button value="submit" class="text-muted" data-toggle="tooltip"
+                                               </a>
+                                                
+                                                <a value="submit" class="text-muted" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Delete"><i
-                                                        class="icofont icofont-delete-alt" onclick="alertify();"></i></button>
+                                                        class="icofont icofont-delete-alt" ></i>
                                                 </a>
                                             </td>
 
@@ -288,7 +289,7 @@
         </div>
     </div>
 
-    <div class="md-modal md-effect-13 addcontact" id="modal-13">
+    <div class="md-modal md-effect-13 addcontact" id="modal-13e">
         <form action="{{route('add-common')}}" method='post'>
             @csrf
         <div class="md-content">

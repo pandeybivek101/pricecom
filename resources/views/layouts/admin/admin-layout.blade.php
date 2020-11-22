@@ -54,7 +54,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/slick-carousel/slick/slick-theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/pages/menu-search/css/component.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/pages/data-table/css/buttons.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css">
     @yield('css')
 </head>
 
@@ -381,6 +386,19 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/slick-carousel/slick/slick.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/pages/product-detail/product-detail.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/pages/data-table/js/jszip.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/pages/data-table/js/pdfmake.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/pages/data-table/js/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/bower_components/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('assets/pages/data-table/js/data-table-custom.js')}}"></script>
+    <script type="{{asset('assets/javascript" src="assets/js/script.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
     <script>
         ClassicEditor.create( document.querySelector( '#desc' ) )
         then( editor => {

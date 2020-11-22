@@ -132,7 +132,7 @@
                         
                             <div class="col-sm-12">
                             <label>Image</label>
-                                <input type="file" class="form-control" name='image'>
+                                <input type="file" id='imgdrop' class="form-control" name='image[]' multiple>
                             </div>
                         </div>
 
@@ -161,17 +161,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 <script>
 
+
+
 $('#addproduct').on('submit', function(e) {
     e.preventDefault();
-
+ 
 
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        type: 'post',
-        url: '/dashboard/add-product',
-        data: $('#addproduct').serialize(),
+        url: "/dashboard/add-product",
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+
         success: function() {
             $('input').val('');
             toastr.success('Product has been successfully added!', 'Thankyou!');

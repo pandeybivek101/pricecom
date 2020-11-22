@@ -17,7 +17,8 @@ class ProductController extends Controller
         if($request->isMethod('post')){
 
             $data=$request->all();
-            print_r($data);exit;
+            //print_r($data['image']);exit;
+            //print_r($data);exit;
             $product=new Product();
             $product->title=$data['title'];
             $product->description=$data['description'];
@@ -32,10 +33,22 @@ class ProductController extends Controller
             $product->discount_type=$data['discount_type'];
             $product->discount=$data['discount'];
             $product->users=Auth::id();
+            $pro=[];
             if ($request->hasfile('image')){
-                $product->image=image_store($data['image']);
+
+                foreach($data['image'] as $img){
+                    $thumb=image_store($img);
+                    array_push($pro, $thumb);
+
+                }
+
+                
+                
             }
+
+            $product->image=json_encode($pro);
             $product->save();
+            //print_r('saved');
             return redirect()->back();
             
 

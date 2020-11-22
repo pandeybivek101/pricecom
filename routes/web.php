@@ -32,7 +32,7 @@ Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
     
 Route::group(['middleware'=>['auth']], function(){
 
-    Route::get('dashboard/fullcalendar', [CalenderController::class, 'index']);
+    Route::get('dashboard/fullcalendar', [CalenderController::class, 'index'])->name('calender');
     Route::post('dashboard/fullcalendar/create', [CalenderController::class, 'create']);
     Route::post('dashboard/fullcalendar/update', [CalenderController::class, 'update']);
     Route::post('dashboard/fullcalendar/delete', [CalenderController::class, 'delete']);

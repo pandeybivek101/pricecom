@@ -35,23 +35,7 @@
                     
                     <div class="dt-responsive table-responsive">
                         <div id="base-style_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="base-style_length"><label>Show <select
-                                                name="base-style_length" aria-controls="base-style"
-                                                class="form-control input-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select> entries</label></div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6">
-                                    <div id="base-style_filter" class="dataTables_filter"><label>Search:<input
-                                                type="search" class="form-control input-sm" placeholder=""
-                                                aria-controls="base-style"></label></div>
-                                </div>
-                            </div>
+                           
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12">
                                     <table id="base-style" class="table table-striped table-bordered nowrap dataTable"
@@ -121,42 +105,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-5">
-                                    <div class="dataTables_info" id="base-style_info" role="status" aria-live="polite">
-                                        Showing 21 to 30 of 57 entries</div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-7">
-                                    <div class="dataTables_paginate paging_simple_numbers" id="base-style_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button page-item previous" id="base-style_previous"><a
-                                                    href="#" aria-controls="base-style" data-dt-idx="0" tabindex="0"
-                                                    class="page-link">Previous</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="1" tabindex="0"
-                                                    class="page-link">1</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="2" tabindex="0"
-                                                    class="page-link">2</a></li>
-                                            <li class="paginate_button page-item active"><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="3" tabindex="0"
-                                                    class="page-link">3</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="4" tabindex="0"
-                                                    class="page-link">4</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="5" tabindex="0"
-                                                    class="page-link">5</a></li>
-                                            <li class="paginate_button page-item "><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="6" tabindex="0"
-                                                    class="page-link">6</a></li>
-                                            <li class="paginate_button page-item next" id="base-style_next"><a href="#"
-                                                    aria-controls="base-style" data-dt-idx="7" tabindex="0"
-                                                    class="page-link">Next</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

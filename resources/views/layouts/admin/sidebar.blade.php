@@ -79,29 +79,13 @@
                 </ul>
             </li>
 
-            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
-                <a href="javascript:void(0)" data-i18n="nav.icons.main">
-                    <span class="pcoded-micon"><i class="ti-star"></i></span>
-                    <span class="pcoded-mtext">Event</span>
+            <li class=" ">
+                <a href="{{route('calender')}}" data-i18n="nav.sticky-notes.main">
+                    <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
+                    <span class="pcoded-mtext">Event Calender</span>
+                    <!--<span class="pcoded-badge label label-danger">HOT</span>-->
                     <span class="pcoded-mcaret"></span>
                 </a>
-                <ul class="pcoded-submenu">
-                    <li class=" ">
-                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Add Website</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">List Website</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-            
-                </ul>
             </li>
         </ul>
     </div>
