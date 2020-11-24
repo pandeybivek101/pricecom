@@ -370,7 +370,7 @@
 </div>
 <![endif]-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
     <script type="text/javascript" src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/bower_components/tether/dist/js/tether.min.js')}}"></script>

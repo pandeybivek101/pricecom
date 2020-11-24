@@ -32,66 +32,25 @@
                             <div class="port_details_all_img row">
                                 <div class="col-lg-12">
                                     <div id="big_banner">
+                                   
+                                    @foreach($product->image as $img)
                                         <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-1.jpg')}}"
+                                            <img class="img img-fluid" src="{{asset('uploads/products/'.$img)}}"
                                                 alt="Big_ Details">
                                         </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-2.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-3.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-4.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-5.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-6.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
-                                        <div class="port_big_img">
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-l-7.jpg')}}"
-                                                alt="Big_ Details">
-                                        </div>
+                                    @endforeach                                        
                                     </div>
+                                    
                                 </div>
                                 <div class="col-lg-12 product-right">
                                     <div id="small_banner">
+                                    @foreach($product->image as $img)
                                         <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-1.jpg')}}"
+                                            <img class="img img-fluid" src="{{asset('uploads/products/'.$img)}}"
                                                 alt="small-details">
                                         </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-2.jpg')}}"
-                                                alt="small-details">
-                                        </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-3.jpg')}}"
-                                                alt="small-details">
-                                        </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-4.jpg')}}"
-                                                alt="small-details">
-                                        </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-5.jpg')}}"
-                                                alt="small-details">
-                                        </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-6.jpg')}}"
-                                                alt="small-details">
-                                        </div>
-                                        <div>
-                                            <img class="img img-fluid" src="{{asset('assets/images/product-detail/pro-d-s-7.jpg')}}"
-                                                alt="small-details">
-                                        </div>
+                                        
+                                    @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -101,78 +60,30 @@
                                 <div>
                                     <div class="col-lg-12">
                                         <span class="txt-muted d-inline-block">Product
-                                            Code: <a href="#!"> PRDT1234 </a>
+                                            Id: <a href="#!"> {{$product->id}} </a>
                                         </span>
-                                        <span class="f-right">Availablity : <a href="#!"> In Stock </a> </span>
+                                        <span style='opacity:0;' class="f-right">Availablity : <a href="#!"> In Stock </a> </span>
                                     </div>
                                     <div class="col-lg-12">
-                                        <h4 class="pro-desc">Athena Black & Red
-                                            Polyester Georgette Maxi Dress</h4>
+                                        <h4 class="pro-desc">{{$product->title}}</h4>
                                     </div>
                                     <div class="col-lg-12">
-                                        <span class="txt-muted"> Brand : Denim
+                                        <span class="txt-muted"> {{$product->brands}}
                                         </span>
                                     </div>
-                                    <div class="stars stars-example-css m-t-15 detail-stars col-lg-12">
-                                        <select id="product-view" class="rating-star" name="rating" autocomplete="off">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
+                                    
                                     <div class="col-lg-12">
                                         <span class="text-primary product-price"><i
-                                                class="icofont icofont-cur-dollar"></i>80.00</span>
-                                        <span class="done-task txt-muted">$90.59</span>
+                                                class="icofont icofont-cur-dollar"></i>{{$product->price}}</span>
+                                       
                                         <hr>
-                                        <p>Lorem Ipsum is simply dummy text of the
-                                            printing and typesetting industry. Lorem
-                                            Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an
-                                            unknown printer took a galley of type
-                                            and scrambled it to make a type specimen
-                                            book. It has survived not only five
-                                            centuries.
-                                        </p>
+                                        {{$product->description}}
+                                        
                                         <hr>
-                                        <h6 class="f-16 f-w-600 m-t-10 m-b-10">
-                                            Quantity</h6>
+                                        
                                     </div>
-                                    <div class="col-xl-3 col-sm-12">
-                                        <div class="p-l-0 m-b-25">
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-default btn-number shadow-none"
-                                                        disabled="disabled" data-type="minus" data-field="quant[1]">
-                                                        <span class="icofont icofont-minus m-0"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" name="quant[1]"
-                                                    class="form-control input-number text-center" value="1">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-default btn-number shadow-none"
-                                                        data-type="plus" data-field="quant[1]">
-                                                        <span class="icofont icofont-plus m-0"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-sm-12 mob-product-btn">
-                                        <button type="button" class="btn btn-primary waves-effect waves-light m-r-20">
-                                            <i class="icofont icofont-cart-alt f-16"></i><span class="m-l-10">ADD TO
-                                                CART</span>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-outline-primary waves-effect waves-light m-r-20">
-                                            <i class="icofont icofont-heart-alt f-16 m-0"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-outline-primary waves-effect waves-light">
-                                            <i class="icofont icofont-eye-alt f-16 m-0"></i>
-                                        </button>
-                                    </div>
+                                   
+                                    
                                 </div>
                             </div>
                         </div>
@@ -210,58 +121,59 @@
 
             <div class="tab-content bg-white">
                 <div class="tab-pane active" id="description" role="tabpanel">
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a
-                        type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining
-                        essentially unchanged.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it.</p>
+                    {{$product->description}}
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td class="col-lg-2">Fabric</td>
-                                <td class="col-lg-10">Midi</td>
+                                <td class="col-lg-2">Title</td>
+                                <td class="col-lg-10">{{$product->title}}</td>
                             </tr>
+
                             <tr>
-                                <td class="col-lg-2">Color</td>
-                                <td class="col-lg-10">Polyester</td>
+                                <td class="col-lg-2">Brand</td>
+                                <td class="col-lg-10">{{$product->brands}}</td>
                             </tr>
+
                             <tr>
-                                <td class="col-lg-2">Sleevs</td>
-                                <td class="col-lg-10">Multi</td>
+                                <td class="col-lg-2">Series</td>
+                                <td class="col-lg-10">{{$product->series}}</td>
                             </tr>
+
                             <tr>
-                                <td class="col-lg-2">Style</td>
-                                <td class="col-lg-10">Coloured</td>
+                                <td class="col-lg-2">Title</td>
+                                <td class="col-lg-10">{{$product->title}}</td>
                             </tr>
+
                             <tr>
-                                <td class="col-lg-2">Neck</td>
-                                <td class="col-lg-10">Full</td>
+                                <td class="col-lg-2">Model</td>
+                                <td class="col-lg-10">{{$product->models}}</td>
                             </tr>
+
                             <tr>
-                                <td class="col-lg-2">Wash</td>
-                                <td class="col-lg-10">Sleevs</td>
+                                <td class="col-lg-2">Generation</td>
+                                <td class="col-lg-10">{{$product->generation}}</td>
                             </tr>
+
+                            <tr>
+                                <td class="col-lg-2">Ram</td>
+                                <td class="col-lg-10">{{$product->ram}}</td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-lg-2">Storage</td>
+                                <td class="col-lg-10">{{$product->storage}}</td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-lg-2">Display</td>
+                                <td class="col-lg-10">{{$product->display}}</td>
+                            </tr>
+   
                         </tbody>
                     </table>
                 </div>
                 <div class="tab-pane" id="review" role="tabpanel">
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a
-                        type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining
-                        essentially unchanged.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it.</p>
+                    {{$product->description}}
                 </div>
                 <div class="tab-pane" id="sizeguide" role="tabpanel">
                     <p>Lorem Ipsum is simply dummy text of the printing and

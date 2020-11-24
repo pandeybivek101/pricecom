@@ -109,6 +109,7 @@ class ProductController extends Controller
     
     public function view_product_detail(Request $request, $id){
         $product=Product::findorfail($id);
+        $product->image=json_decode($product->image);
         return view('admin.view-product-detail')->with(compact('product'));
     }
 

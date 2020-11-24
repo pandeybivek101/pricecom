@@ -1,32 +1,4 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table cellspacing='0' cellpadding='0' border='1'>
-    <tr>  
-    <th>Name</th>
-    <th>series</th>
-    <th>brand</th>
-    <th>Action</th>
-    </tr>
-    @foreach($products as $product)
-    <tr>
-    <th>{{$product->title}}</th>
-    <th>{{$product->series}}</th>
-    <th>{{$product->brands}}</th>
-    <th>
-    <a href="{{route('edit-product', $product->id)}}">Edit</a>
-    <a href="{{route('delete-product', $product->id)}}">Delete</a>
-    </th>
-    </tr>
-    @endforeach
-    </table>
-</body>
-</html>-->
+
 @extends('layouts.admin.admin-layout')
 @section('content')
 <div class="page-header">
@@ -104,10 +76,14 @@
                                             <tr role="row" class="@php echo $class; @endphp">
                                             <td>{{$pro->id}}</td>
                                                 <td>
-                                                    <img src="{{asset('uploads/products/'.$pro->image)}}" height='100' width='100' class="img-fluid" alt="tbl">
+                                                @php
+                                                $arr = explode(',',trim($pro->image));
+                                                $imgs = preg_replace('/[^A-Za-z0-9.\-]/', '', $arr[0]); 
+                                                @endphp
+                                                    <img src="{{asset('uploads/products/'.$imgs)}}" height='100' width='100' class="img-fluid" alt="tbl">
                                                 </td>
                                                 <td>{{$pro->title}}</td>
-                                                <td>Rs.{{$pro->price}}</td>
+                                                <td>http://127.0.0.1:8000/dashboard/view-productRs.{{$pro->price}}</td>
                                                 <td>{{$pro->brands}}</td>
                                                 <td>
 
