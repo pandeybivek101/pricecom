@@ -473,3 +473,90 @@ i#eye{
     }
     
 }*/
+
+.search-card{
+    border:1px solid #f1f1f1;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+}
+
+form#search-form .input-group.search-input{
+    width: 100%;
+}
+
+.search-card #search-form .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.top-sec{
+    padding:20px;
+    border-bottom:1px solid #f1f1f1;
+}
+
+.search-card{
+    background:#fff;
+}
+
+.check span{
+    padding-left:7px;
+}
+
+.search-card #search-form button{
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.last-frm form{
+    display:flex;
+}
+
+.last-frm input{
+    border-radius: 0px;
+}
+.sep{
+    margin:0 9px;
+}
+
+.price-submit{
+    margin-left:10px;
+    background-color:#1C448A;
+    padding-left:20px;
+    padding-right:20px;
+    position:relative;
+}
+
+.price-submit .fa-search:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+}
+
+.serach_found_container{
+    background-color: #fff;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.search_inner_container .product-card{
+    border:1px solid #f1f1f1;
+}
+.search_found_title{
+    padding:30px 0;
+}
+
+.search_found_body{
+    padding:0px 20px 50px 20px;
+
+}
+
+.logo-image a{
+    color:#fff;
+    text-decoration: none;
+}
+

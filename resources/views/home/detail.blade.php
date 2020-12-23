@@ -3,10 +3,10 @@
 <?php  use \App\Http\Controllers\HomeController;  ?>
     <section class="search-box-container">
         <div class="container text-center">
-            <form class="main" id='search-form' action='pp.html' method='get'>
+            <form class="main" id='search-form' action='{{route("search")}}' method='get'>
                 <div class="input-group">
                     <div class="custom-file">
-                      <input type="text" class="form-control" name='item' required>
+                      <input type="text" class="form-control" name='q' required>
                       <!--<label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>-->
                     </div>
                     <button><i class="fa fa-search" aria-hidden="true"></i>search</button>

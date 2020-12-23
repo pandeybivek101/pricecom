@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="card-block">
-                    <form role="form" id='addproduct' class='dropzone dz-clickable dz-started'
+                    <form role="form" id='ajaxform' class='dropzone dz-clickable dz-started'
                         action="{{route('add-product')}}" method='post' enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -158,37 +158,5 @@
 @endsection
 
 @section('js')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-<script>
 
-
-
-$('#addproduct').on('submit', function(e) {
-    e.preventDefault();
- 
-
-    $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: "/dashboard/add-product",
-        type: "POST",
-        data: new FormData(this),
-        contentType: false,
-        cache: false,
-        processData:false,
-
-        success: function() {
-            $('input').val('');
-            toastr.success('Product has been successfully added!', 'Thankyou!');
-            
-
-        },
-        error: function() {
-            alert('error');
-        }
-    });
-
-});
-</script>
 @endsection

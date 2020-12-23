@@ -8,6 +8,7 @@ use App\Models\Common;
 use App\Models\Website;
 use Auth;
 use Goutte;
+use Response;
 
 
 class ProductController extends Controller
@@ -66,11 +67,11 @@ class ProductController extends Controller
         perform_delete($id, Product::class);
     }
 
-    public function edit_product(Request $request, $id){
+    public function edit_product($id){
         $product=Product::findorfail($id);
         $website=Website::all();
         $similar=Common::where('products_id', $id)->get();
-        if($request->isMethod('post')){
+        /*if($request->isMethod('post')){
             $data=$request->all();
             $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
             Product::where('id', $id)->update([
@@ -89,8 +90,34 @@ class ProductController extends Controller
                 'discount'=>$data['discount'],
             ]);
             return redirect()->back();
-        }
+        }*/
         return view('admin.edit-product')->with(compact('product', 'website','similar'));
+    }
+
+
+    public function update_product(Request $request){
+        if($request->isMethod('post')){
+            $data=$request->all();
+            $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
+            Product::where('id', $data['pid'])->update([
+                'title'=>$data['title'],
+                'description'=>$data['description'],
+                'brands'=>$data['brand'],
+                'series'=>$data['series'],
+                'models'=>$data['models'],
+                'price'=>$data['price'],
+                'generation'=>$data['generation'],
+                'ram'=>$data['ram'],
+                'storage'=>$data['storage'],
+                'display'=>$data['display'],
+                'image'=>$filename,
+                'discount_type'=>$data['discount_type'],
+                'discount'=>$data['discount'],
+            ]);
+            //return redirect()->back();
+            //print_r($data);exit;
+            return Response::json($data);
+        }
     }
 
     public function add_common(Request $request){

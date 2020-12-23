@@ -27,7 +27,7 @@ use App\Http\Controllers\CalenderController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
-
+Route::match(['get', 'post'], '/search', [HomeController::class, 'search'])->name('search');
 
     
 Route::group(['middleware'=>['auth']], function(){
@@ -43,6 +43,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('dashboard/view-product', [ProductController::class, 'view_product'])->name('view-product');
     Route::match(['get', 'post'], 'dasbhoard/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete-product');
     Route::match(['get', 'post'], 'dashboard/edit-product/{id}', [ProductController::class, 'edit_product'])->name('edit-product');
+    Route::post('dashboard/update-product/', [ProductController::class, 'update_product'])->name('update-product');
     Route::get('dashboard/view-product/{id}', [ProductController::class, 'view_product_detail'])->name('view-product-detail');
 
     
@@ -56,7 +57,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::delete('dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
     //Route::delete(['get', 'post'], 'dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
 
-
+    //Route::match(['get', 'post'], 'dashboard/profile', )
     /*Route::get('fullcalendar', [CalenderController::class, 'index']);
     Route::post('fullcalendar/create', [CalenderController::class, 'create']);
     Route::post('fullcalendar/update', [CalenderController::class, 'update']);

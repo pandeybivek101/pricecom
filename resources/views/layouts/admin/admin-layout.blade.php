@@ -56,6 +56,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/pages/data-table/css/buttons.dataTables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     @yield('css')
 </head>
 
@@ -426,6 +427,77 @@
         }
     </script>
 
+
+<script>
+
+
+
+$('#ajaxform').on('submit', function(e) {
+    var action=$('#ajaxform').attr('action')
+    e.preventDefault();
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        //url: "/dashboard/add-product",
+        url:action,
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+
+        success: function() {
+            $('input').val('');
+            toastr.success('Product has been successfully added!', 'Thankyou!');
+            
+
+        },
+        error: function() {
+            alert('error');
+        }
+    });
+
+});
+
+
+$('#editajax').on('submit', function(e) {
+    var action=$('#editajax').attr('action')
+    e.preventDefault();
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        //url: "/dashboard/add-product",
+        url:action,
+        type: "POST",
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+
+        success: function(response) {
+            
+            //var key = "foo";
+            delete response['_token'];
+            console.log(response);
+            $.map(response, function(val, key) {
+              // $("input['name:"+key+"]").val(val);
+               console.log('done');
+            });
+                            
+
+        },
+        error: function() {
+            alert('error');
+        }
+    });
+
+});
+
+
+</script>
 
     @yield('js')
 

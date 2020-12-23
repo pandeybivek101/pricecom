@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div class="card-block">
-                    <form role="form" id='addproduct' class='dropzone dz-clickable dz-started'
-                        action="{{route('edit-product', $product->id)}}" method='post' enctype="multipart/form-data">
+                    <form role="form" id='editajax' class='dropzone dz-clickable dz-started'
+                        action="{{route('update-product')}}" method='post'  enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-sm-6">
@@ -44,6 +44,7 @@
                                     <label>Title</label>
                                     <input type="text" class="form-control" value="{{$product->title}}"
                                         placeholder="Enter Title" name='title'>
+                                    <input type='hidden' name='pid' value='{{$product->id}}'>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -290,7 +291,7 @@
     </div>
 
     <div class="md-modal md-effect-13 addcontact" id="modal-13e">
-        <form action="{{route('add-common')}}" method='post'>
+        <form action="{{route('add-common')}}" method='post' id='ajaxform'>
             @csrf
         <div class="md-content">
             <h3 class="f-26">Add Common</h3>

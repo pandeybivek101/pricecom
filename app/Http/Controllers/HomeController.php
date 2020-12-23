@@ -115,4 +115,17 @@ class HomeController extends Controller
     public function dotan(){
         return view('home.dotan');
     }
+
+    public function search(Request $request){
+        $data=$request->all();
+        $val=$data['q'];
+        $results=Product::where('title', 'like', '%'.$val.'%')
+        ->orWhere('models', 'like', '%'.$val.'%')
+        ->orWhere('brands', 'like', '%'.$val.'%')
+        ->orWhere('series', 'like', '%'.$val.'%')
+        ->get();
+        $total=$results->count();
+        return view('home.search')->with(compact('results', 'total'));
+
+    }
 }
