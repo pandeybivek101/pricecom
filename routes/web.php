@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\CalenderController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,12 +58,9 @@ Route::group(['middleware'=>['auth']], function(){
     Route::delete('dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
     //Route::delete(['get', 'post'], 'dashboard/delete-common/{$id}', [CommonController::class, 'delete_common'])->name('delete-common');
 
-    //Route::match(['get', 'post'], 'dashboard/profile', )
-    /*Route::get('fullcalendar', [CalenderController::class, 'index']);
-    Route::post('fullcalendar/create', [CalenderController::class, 'create']);
-    Route::post('fullcalendar/update', [CalenderController::class, 'update']);
-    Route::post('fullcalendar/delete', [CalenderController::class, 'destroy']);*/
-
+    Route::match(['get', 'post'], 'dashboard/compose-email', [EmailController::class,'compose_email'])->name('compose');
+    Route::get('dashboard/inbox', [EmailController::class, "inbox"])->name('inbox');
+    //Route::post('dashboard/send-email', [EmailController::class,'send_email'])->name('send');
 
 
 });

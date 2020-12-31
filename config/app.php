@@ -178,6 +178,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Weidner\Goutte\GoutteServiceProvider::class,
+        Webklex\IMAP\Providers\LaravelServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Goutte' => Weidner\Goutte\GoutteFacade::class,
+        'Client'=>Webklex\IMAP\Facades\Client::class
 
     ],
 

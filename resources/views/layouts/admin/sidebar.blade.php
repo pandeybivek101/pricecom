@@ -39,7 +39,7 @@
                     <li class=" ">
                         <a href="{{route('add-product')}}" data-i18n="nav.icons.font-awesome">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Addproduct</span>
+                            <span class="pcoded-mtext">Add Product</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
@@ -47,6 +47,20 @@
                         <a href="{{route('view-product')}}" data-i18n="nav.icons.themify">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">List Product</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('add-product')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add Brand</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-product')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">List Brand</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
@@ -86,6 +100,90 @@
                     <!--<span class="pcoded-badge label label-danger">HOT</span>-->
                     <span class="pcoded-mcaret"></span>
                 </a>
+            </li>
+
+            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
+                <a href="javascript:void(0)" data-i18n="nav.icons.main">
+                    <span class="pcoded-micon"><i class="ti-email"></i></span>
+                    <span class="pcoded-mtext">Email Management</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{route('compose')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Compose Email</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Inbox</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Sent</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+            
+                </ul>
+            </li>
+
+            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
+                <a href="javascript:void(0)" data-i18n="nav.icons.main">
+                    <span class="pcoded-micon"><i class="ti-star"></i></span>
+                    <span class="pcoded-mtext">Blog Management</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add Website</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">List Website</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+            
+                </ul>
+            </li>
+
+
+
+            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
+                <a href="javascript:void(0)" data-i18n="nav.icons.main">
+                    <span class="pcoded-micon"><i class="ti-star"></i></span>
+                    <span class="pcoded-mtext">Settings</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add Website</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">List Website</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+            
+                </ul>
             </li>
         </ul>
     </div>

@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^2.0",
         "tightenco/ziggy": "^0.9.4",
+        "webklex/laravel-imap": "^2.3",
         "weidner/goutte": "^2.0"
     },
     "require-dev": {
