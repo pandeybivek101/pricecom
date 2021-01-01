@@ -57,6 +57,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    @cloudinaryJS
     @yield('css')
 </head>
 
@@ -432,7 +433,7 @@
 
 
 
-$('#ajaxform').on('submit', function(e) {
+./*$('#ajaxform').on('submit', function(e) {
     var action=$('#ajaxform').attr('action')
     e.preventDefault();
 
@@ -459,7 +460,7 @@ $('#ajaxform').on('submit', function(e) {
         }
     });
 
-});
+});*/
 
 
 $('#editajax').on('submit', function(e) {

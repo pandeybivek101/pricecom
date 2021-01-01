@@ -9,6 +9,8 @@ use App\Models\Website;
 use Auth;
 use Goutte;
 use Response;
+use Cloudinary;
+use Cloudder;
 
 
 class ProductController extends Controller
@@ -38,7 +40,11 @@ class ProductController extends Controller
             if ($request->hasfile('image')){
 
                 foreach($data['image'] as $img){
+                    //Cloudder::upload($img);
+                    Cloudinary::upload($img);
                     $thumb=image_store($img);
+                    Cloudinary::upload($img);
+                    //Cloudder::upload($img);
                     array_push($pro, $thumb);
 
                 }

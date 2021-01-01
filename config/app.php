@@ -179,6 +179,8 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Weidner\Goutte\GoutteServiceProvider::class,
         Webklex\IMAP\Providers\LaravelServiceProvider::class,
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
 
     ],
 
@@ -232,7 +234,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Goutte' => Weidner\Goutte\GoutteFacade::class,
-        'Client'=>Webklex\IMAP\Facades\Client::class
+        'Client'=>Webklex\IMAP\Facades\Client::class,
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+
 
     ],
 

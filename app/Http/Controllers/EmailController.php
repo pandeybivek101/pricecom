@@ -52,13 +52,13 @@ class EmailController extends Controller
         $client->connect();
         $inboxFolder = $client->getFolder('INBOX'); 
         $inboxMessages = $inboxFolder->messages()->all()->get();
-        foreach($inboxMessages as $m){
+        /*foreach($inboxMessages as $m){
             $name=$m->getFlags();
             echo "<pre>";
             print_r($names);
             echo "</pre>";
             
-        }
+        }*/
         //echo "<pre>";
         //print_r($inboxMessages);
         //echo "</pre>";
