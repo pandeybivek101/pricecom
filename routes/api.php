@@ -28,7 +28,7 @@ DB_PASSWORD=password
 
 DB_CONNECTION=pgsql
 DB_HOST=ec2-34-237-89-96.compute-1.amazonaws.com
-DB_PORT=d7c4vvhi5ifbj6
+DB_PORT=5432
 DB_DATABASE=d7c4vvhi5ifbj6
 DB_USERNAME=cdcshdtwbmbsjv
 DB_PASSWORD=7bad180dc0924f0df48ce5b275489fb09e9be30a87d161dfc5dcab80235fb88f

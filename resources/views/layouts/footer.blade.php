@@ -95,5 +95,7 @@
     <script>
         $(".product-card").flip();
     </script>
+
+    @yield('js');
 </body>
 </html>

@@ -7,6 +7,7 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,15 @@ use App\Http\Controllers\EmailController;
 //to do list common, popup common and add common, add, crud website
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products/{id}', [HomeController::class, 'detail'])->name('detail');
-Route::get('/dotan', [HomeController::class, 'dotan'])->name('dotan');
-Route::match(['get', 'post'], '/search', [HomeController::class, 'search'])->name('search');
+Route::get('/dotan', [SearchController::class, 'dotan'])->name('dotan');
+Route::match(['get', 'post'], '/search', [SearchController::class, 'search'])->name('search');
+
+//for ajax live search in search page
+Route::post('/ajax-search', [SearchController::class, 'ajax_search'])->name('ajax_search');
+Route::post('/brands-ajax-search', [SearchController::class, 'brands_ajax_search'])->name('brands_ajax_search');
+
+
+//Route::match(['get', 'post'], '/ajaxsearch', [SearchController::class, '']);
 
     
 Route::group(['middleware'=>['auth']], function(){
@@ -61,6 +69,9 @@ Route::group(['middleware'=>['auth']], function(){
     Route::match(['get', 'post'], 'dashboard/compose-email', [EmailController::class,'compose_email'])->name('compose');
     Route::get('dashboard/inbox', [EmailController::class, "inbox"])->name('inbox');
     //Route::post('dashboard/send-email', [EmailController::class,'send_email'])->name('send');
+
+
+    
 
 
 });
