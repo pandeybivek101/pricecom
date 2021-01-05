@@ -510,8 +510,12 @@ form#search-form .input-group.search-input{
     padding-right: 10px;
 }
 
-.last-frm form{
+/*.last-frm form{
     display:flex;
+}*/
+
+.last-frm{
+    display: flex;
 }
 
 .last-frm input{
@@ -557,6 +561,20 @@ form#search-form .input-group.search-input{
 
 .logo-image a{
     color:#fff;
+    text-decoration: none;
+}
+
+.row.btn-row.text-center{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+#load_more{
+    background-color: #1C448A;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
     text-decoration: none;
 }
 

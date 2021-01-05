@@ -34,7 +34,7 @@ Route::match(['get', 'post'], '/search', [SearchController::class, 'search'])->n
 //for ajax live search in search page
 Route::post('/ajax-search', [SearchController::class, 'ajax_search'])->name('ajax_search');
 Route::post('/brands-ajax-search', [SearchController::class, 'brands_ajax_search'])->name('brands_ajax_search');
-
+Route::any('/test', [SearchController::class, "test"])->name('test');
 
 //Route::match(['get', 'post'], '/ajaxsearch', [SearchController::class, '']);
 

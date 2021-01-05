@@ -27,7 +27,7 @@
                  <div class='top-sec last'>
                     <label for="search-box">BEST PRICE</label>
                     <div class='last-frm'>
-                        <form action="">
+                        <form action="" style='display:flex;'>
                         <div class='price-from'>
                             <input type="text" class="form-control" name='item' required> 
                         </div>
@@ -112,18 +112,14 @@
                console.log(response.total)
               $('#search-content').html(response.products)
               $('#total_search').text(response.total)
-
               
               
            },
            error:function(){
                alert('error');
            }
-
        }) 
-
    })
-
    $('#search_brand input').change(function(){
        $.ajax({
             headers: {
@@ -138,14 +134,12 @@
            success:function(response){
               $('#search-content').append(response.products)
               $('#total_search').text(response.total)
-
               
               
            },
            error:function(){
                alert('error');
            }
-
        })
     })
 </script>
