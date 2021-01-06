@@ -31,6 +31,11 @@ class HelperClass{
     }
 
 
+    public function check($data){
+        return $data;
+    }
+
+
     public static function get_cloudinary_image_link($img){
         return 'https://res.cloudinary.com/http-smartpricecom-herokuapp-com/image/upload/'.$img ;
 
