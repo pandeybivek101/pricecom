@@ -433,7 +433,7 @@
 
 
 
-$('#ajaxform').on('submit', function(e) {
+/*$('#ajaxform').on('submit', function(e) {
     var action=$('#ajaxform').attr('action')
     e.preventDefault();
 
@@ -460,7 +460,7 @@ $('#ajaxform').on('submit', function(e) {
         }
     });
 
-});
+});*/
 
 
 $('#editajax').on('submit', function(e) {
