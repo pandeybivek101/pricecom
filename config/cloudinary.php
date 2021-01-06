@@ -19,7 +19,9 @@ return [
     |
     |
     */
-    'notification_url' => env('CLOUDINARY_NOTIFICATION_URL'),
+    'notification_url' => 'http://smartpricecom.herokuapp.com/uploaded',
+    //'notification_url' => env('CLOUDINARY_NOTIFICATION_URL'),
+
 
 
     /*
@@ -32,11 +34,13 @@ return [
     |
     |
     */
-    'cloud_url' => env('CLOUDINARY_URL'),
+    //'cloud_url' => env('CLOUDINARY_URL'),
+    'cloud_url' => 'cloudinary://285814314825979:gtuw5eLuKI2ox6YN-qSxO-UMNaU@http-smartpricecom-herokuapp-com',
 
     /**
      * Upload Preset From Cloudinary Dashboard
      *
      */
-    'upload_preset' => env('CLOUDINARY_UPLOAD_PRESET')
+    //'upload_preset' => env('CLOUDINARY_UPLOAD_PRESET')
+    'upload_preset' => 'lpvmrzie'
 ];
