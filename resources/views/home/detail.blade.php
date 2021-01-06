@@ -20,7 +20,7 @@
                 <div class='row detail-row'>
                     <div class="col-md-4 col-sm-12 border-side">
                         <div class='product-image'>
-                            <img src="{{asset('/uploads/products/'.$product->image)}}" alt="dell">
+                            <img src="@php  echo HelperClass::get_image($product->image) @endphp" alt="dell">
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-12">
