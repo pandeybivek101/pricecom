@@ -578,3 +578,7 @@ form#search-form .input-group.search-input{
     text-decoration: none;
 }
 
+.shop-section .row.btn-row.text-center{
+    margin:0 auto;
+}
+

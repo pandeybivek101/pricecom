@@ -40,19 +40,15 @@ class ProductController extends Controller
             if ($request->hasfile('image')){
 
                 foreach($data['image'] as $img){
-                    //Cloudder::upload($img);
-                    Cloudinary::upload($img);
-                    $thumb=image_store($img);
-                    //Cloudinary::upload($img);
-                    //Cloudder::upload($img);
-                    array_push($pro, $thumb);
+                    $name=cloudinary()->upload($img->getRealPath())->getFileName();
+                    array_push($pro, $name);
 
-                }
-
-                
+                }     
                 
             }
 
+
+            
             $product->image=json_encode($pro);
             $product->save();
             //print_r('saved');

@@ -3,15 +3,16 @@
 @section('content')
 <section class='shop-section'>
         <div class='container'>
-            <div class="row">
+            <div class="row" id='home-item-row'>
 
             @foreach($products as $product )
-                <div class='col-md-3 col-6'>
+                <div class='col-md-3 col-6 home-card'>
                     <div class='product-card text-center'>
                         <div class='image-section'>
                             <div class="image">
+
                             <a href="{{route('detail', $product->id)}}">
-                                <img src="{{asset('/uploads/products/'.$product->image)}}" alt="dell">
+                                <img src="@php  echo HelperClass::get_image($product->image) @endphp" alt="dell">
                             </a>
                             </div>
                         </div>
@@ -28,9 +29,7 @@
                 
             </div>
 
-            <div class='row btn-row text-center'>
-                <a href="" id='load_more'>Load More</a>
-            </div>
+            
         </div>  
       </section>
       @endsection
