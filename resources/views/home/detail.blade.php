@@ -45,7 +45,7 @@
                                         <li>ROM/Storage:{{$product->storage}}</li>
                                         <li>Generation:{{$product->generation}}</li>
                                     </ul>
-                                    <p class='desc'>@php echo $product->descriptionPPPPP @endphp</p>
+                                    <p class='desc'>@php echo $product->description @endphp</p>
                                 </div>
                                 
                             </div>
