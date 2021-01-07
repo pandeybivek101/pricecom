@@ -34,7 +34,7 @@
                                    
                                     @foreach($product->image as $img)
                                         <div class="port_big_img">
-                                            <img class="img img-fluid" src="@php  echo HelperClass::get_cloudinary_image_link($img) @endphp"
+                                            <img class="img img-fluid" src="@php  echo get_cloudinary_image_link($img) @endphp"
                                                 alt="Big_ Details">
                                         </div>
                                     @endforeach                                        
@@ -45,7 +45,7 @@
                                     <div id="small_banner">
                                     @foreach($product->image as $img)
                                         <div>
-                                            <img class="img img-fluid" src="@php  echo HelperClass::get_cloudinary_image_link($img) @endphp"
+                                            <img class="img img-fluid" src="@php  echo get_cloudinary_image_link($img) @endphp"
                                                 alt="small-details">
                                         </div>
                                         

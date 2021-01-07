@@ -12,7 +12,7 @@
                             <div class="image">
 
                             <a href="{{route('detail', $product->id)}}">
-                                <img src="@php  echo HelperClass::get_image($product->image) @endphp" alt="dell">
+                                <img src="@php  echo get_image($product->image) @endphp" alt="dell">
                             </a>
                             </div>
                         </div>

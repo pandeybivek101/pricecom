@@ -10,7 +10,6 @@ use Auth;
 use Goutte;
 use Response;
 use Cloudinary;
-use Cloudder;
 
 
 class ProductController extends Controller
@@ -18,10 +17,7 @@ class ProductController extends Controller
     //
     public function add_product(Request $request){
         if($request->isMethod('post')){
-
             $data=$request->all();
-            //print_r($data['image']);exit;
-            //print_r($data);exit;
             $product=new Product();
             $product->title=$data['title'];
             $product->description=$data['description'];
@@ -66,7 +62,7 @@ class ProductController extends Controller
     }
 
     public function delete_product($id){
-        perform_delete($id, Product::class);
+        CHelper::perform_delete($id, Product::class);
     }
 
     public function edit_product($id){

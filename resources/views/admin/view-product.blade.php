@@ -77,7 +77,7 @@
                                             <td>{{$pro->id}}</td>
                                                 <td>
                                                 
-                                                    <img src="@php  echo HelperClass::get_image($pro->image) @endphp" height='100' width='100' class="img-fluid" alt="tbl">
+                                                    <img src="@php  echo get_image($pro->image) @endphp" height='100' width='100' class="img-fluid" alt="tbl">
                                                 </td>
                                                 <td>{{$pro->title}}</td>
                                                 <td>http://127.0.0.1:8000/dashboard/view-productRs.{{$pro->price}}</td>

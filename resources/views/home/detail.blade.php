@@ -20,7 +20,7 @@
                 <div class='row detail-row'>
                     <div class="col-md-4 col-sm-12 border-side">
                         <div class='product-image'>
-                            <img src="@php  echo HelperClass::get_image($product->image) @endphp" alt="dell">
+                            <img src="@php  echo get_image($product->image) @endphp" alt="dell">
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-12">
@@ -38,14 +38,14 @@
                                 </div>
                                 <div class='product-Features'>
                                     <p class='feature-heading'>Features</p>
-                                    <ul class='feature-list'>
-                                        <li>Processor:{{$product->series}}</li>
+                                   <ul class='feature-list'>
+                                       <li>Processor:{{$product->series}}</li>
                                         <li>Display:{{$product->display}}</li>
                                         <li>RAM:{{$product->ram}}</li>
                                         <li>ROM/Storage:{{$product->storage}}</li>
                                         <li>Generation:{{$product->generation}}</li>
                                     </ul>
-                                    <p class='desc'>{{$product->description}}</p>
+                                    <p class='desc'>@php echo $product->descriptionPPPPP @endphp</p>
                                 </div>
                                 
                             </div>
