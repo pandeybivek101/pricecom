@@ -62,7 +62,7 @@ class ProductController extends Controller
     }
 
     public function delete_product($id){
-        CHelper::perform_delete($id, Product::class);
+        perform_delete($id, Product::class);
     }
 
     public function edit_product($id){
