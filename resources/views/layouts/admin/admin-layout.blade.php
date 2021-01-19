@@ -57,8 +57,16 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}">
+    <style>
+    .bootstrap-tagsinput{
+        width: 100% !important;
+        height: 140px !important;
+    }
+</style>
     @cloudinaryJS
     @yield('css')
+
 </head>
 
 <body>
@@ -395,8 +403,9 @@
     <script src="{{asset('assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
     <script src="{{asset('assets/pages/data-table/js/data-table-custom.js')}}"></script>
-    <script type="{{asset('assets/javascript" src="assets/js/script.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+    <script type="text/javascript" src="{{asset('assets/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
+    
     <script>
         ClassicEditor.create( document.querySelector( '#desc' ) )
         then( editor => {
@@ -433,7 +442,7 @@
 
 
 
-/*$('#ajaxform').on('submit', function(e) {
+$('#ajaxform').on('submit', function(e) {
     var action=$('#ajaxform').attr('action')
     e.preventDefault();
 
@@ -455,12 +464,21 @@
             
 
         },
-        error: function() {
-            alert('error');
+        error: function(response) {
+            var obj = jQuery.parseJSON(response.responseText);
+            var data=obj.errors;
+            $('.errors').remove();
+            $('input').css("border-color", "rgba(0,0,0,.15)");
+            for (var key in data) {
+                $("<span class='errors' style='color: red;font-family: serif;'>"+data[key][0]+"<span>").insertAfter('input[name='+key+']');
+                $('input[name='+key+']').css("border-color", "red");
+            }
+            //console.log(data);
+
         }
     });
 
-});*/
+});
 
 
 $('#editajax').on('submit', function(e) {
@@ -490,8 +508,8 @@ $('#editajax').on('submit', function(e) {
                             
 
         },
-        error: function() {
-            alert('error');
+        error: function(response) {
+            console(response);
         }
     });
 

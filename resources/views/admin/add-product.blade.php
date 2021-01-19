@@ -136,6 +136,10 @@
                             </div>
                         </div>
 
+
+
+                        
+
                         <!-- /.card-header -->
                         <div class="card-body pad" style='padding-left:0px; padding-right:0px;'>
                             <div class="mb-3">
@@ -145,7 +149,8 @@
                             </div>
                         </div>
 
-                        <button type='submit' value="submit" class='btn btn-primary btn-block'>Add Product</button>
+
+                        <button type='submit' id="submit-all" value="submit" class='btn btn-primary btn-block'>Add Product</button>
 
                     </form>
 
@@ -157,6 +162,11 @@
 </div>
 @endsection
 
+
+   @section('css')
+   
+    @endsection
+    
 @section('js')
 
 @endsection

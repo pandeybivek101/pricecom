@@ -8,6 +8,7 @@ use App\Http\Controllers\CommonController;
 use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,16 @@ Route::any('/test', [SearchController::class, "test"])->name('test');
 
     
 Route::group(['middleware'=>['auth']], function(){
+
+
+    //for blog
+    Route::get('dashboard/create-blog', [BlogController::class, 'create'])->name('create-blog');
+    Route::post('dashboard/save-blog', [BlogController::class, 'store'])->name('save-blog');
+    Route::get('dashboard/list-blog', [BlogController::class, 'index'])->name('list-blog');
+    Route::get('dashboard/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
+    Route::post('dashboard/update-blog/{id}', [BlogController::class, 'update'])->name('update-blog');
+    Route::get('dashboard/delete-blog/{id}', [BlogController::class, 'destroy'])->name('delete-blog');
+
 
     Route::get('dashboard/fullcalendar', [CalenderController::class, 'index'])->name('calender');
     Route::post('dashboard/fullcalendar/create', [CalenderController::class, 'create']);

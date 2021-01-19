@@ -109,7 +109,6 @@
                'input':$(this).val()
            },
            success:function(response){
-               console.log(response.total)
               $('#search-content').html(response.products)
               $('#total_search').text(response.total)
               

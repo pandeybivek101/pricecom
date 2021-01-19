@@ -69,26 +69,6 @@ class ProductController extends Controller
         $product=Product::findorfail($id);
         $website=Website::all();
         $similar=Common::where('products_id', $id)->get();
-        /*if($request->isMethod('post')){
-            $data=$request->all();
-            $filename=$request->hasfile('image') ? image_store($data['image']) : $data['old_image'];
-            Product::where('id', $id)->update([
-                'title'=>$data['title'],
-                'description'=>$data['description'],
-                'brands'=>$data['brand'],
-                'series'=>$data['series'],
-                'models'=>$data['models'],
-                'price'=>$data['price'],
-                'generation'=>$data['generation'],
-                'ram'=>$data['ram'],
-                'storage'=>$data['storage'],
-                'display'=>$data['display'],
-                'image'=>$filename,
-                'discount_type'=>$data['discount_type'],
-                'discount'=>$data['discount'],
-            ]);
-            return redirect()->back();
-        }*/
         return view('admin.edit-product')->with(compact('product', 'website','similar'));
     }
 

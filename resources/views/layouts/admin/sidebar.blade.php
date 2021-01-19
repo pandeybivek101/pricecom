@@ -142,16 +142,16 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
+                        <a href="{{route('create-blog')}}" data-i18n="nav.icons.font-awesome">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Add Website</span>
+                            <span class="pcoded-mtext">Add Blog</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                        <a href="{{route('list-blog')}}" data-i18n="nav.icons.themify">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">List Website</span>
+                            <span class="pcoded-mtext">List Blog</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
@@ -164,27 +164,112 @@
             <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
                 <a href="javascript:void(0)" data-i18n="nav.icons.main">
                     <span class="pcoded-micon"><i class="ti-star"></i></span>
-                    <span class="pcoded-mtext">Settings</span>
+                    <span class="pcoded-mtext">Page Settings</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
                         <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Add Website</span>
+                            <span class="pcoded-mtext">Menus</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
                         <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">List Website</span>
+                            <span class="pcoded-mtext">Pages</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
             
                 </ul>
             </li>
+
+
+            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
+                <a href="javascript:void(0)" data-i18n="nav.icons.main">
+                    <span class="pcoded-micon"><i class="ti-star"></i></span>
+                    <span class="pcoded-mtext">Testimonials</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Menus</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Pages</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+            
+                </ul>
+            </li>
+
+
+            <li class="pcoded-hasmenu" dropdown-icon="style3" subitem-icon="style6">
+                <a href="javascript:void(0)" data-i18n="nav.icons.main">
+                    <span class="pcoded-micon"><i class="ti-star"></i></span>
+                    <span class="pcoded-mtext">Reviews</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{route('website-create')}}" data-i18n="nav.icons.font-awesome">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Menus</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{route('view-website')}}" data-i18n="nav.icons.themify">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Pages</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+            
+                </ul>
+            </li>
+
+
+            <li class=" ">
+                <a href="{{route('dashboard')}}" data-i18n="nav.sticky-notes.main">
+                    <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
+                    <span class="pcoded-mtext">Analytics</span>
+                    <!--<span class="pcoded-badge label label-danger">HOT</span>-->
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+
+            <li class=" ">
+                <a href="{{route('dashboard')}}" data-i18n="nav.sticky-notes.main">
+                    <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
+                    <span class="pcoded-mtext">Profile</span>
+                    <!--<span class="pcoded-badge label label-danger">HOT</span>-->
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+
+            <li class=" ">
+                <a href="{{route('dashboard')}}" data-i18n="nav.sticky-notes.main">
+                    <span class="pcoded-micon"><i class="ti-layers-alt"></i></span>
+                    <span class="pcoded-mtext">Logout</span>
+                    <!--<span class="pcoded-badge label label-danger">HOT</span>-->
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+
+
         </ul>
     </div>
 </nav>

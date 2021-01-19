@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Website;
+use Redirect,Response;
+use Validator;
 
 
 class WebsiteController extends Controller
@@ -13,15 +15,24 @@ class WebsiteController extends Controller
     {
         //
         if($request->isMethod('post')){
+
+            $validator=Validator::make($request->all(), [
+                'name' => 'required|unique:websites|max:255',
+                'url' => 'required|unique:websites',
+                'logo_url' => "required|unique:websites",
+            ])->validateWithBag('post');
+
             $data=$request->all();
             $website=new Website();
             $website->name=$data['name'];
             $website->url=$data['url'];
             $website->logo_url=$data['logo_url']; 
             $website->save();
-            return redirect()->back();   
+            //return redirect()->back();
+            return Response::json($validator);
+
         }
-        return view('admin.add-website');
+       return view('admin.add-website');
         
     }
 
