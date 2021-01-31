@@ -10,6 +10,7 @@ use Auth;
 use Goutte;
 use Response;
 use Cloudinary;
+use Validator;
 
 
 class ProductController extends Controller
@@ -17,7 +18,28 @@ class ProductController extends Controller
     //
     public function add_product(Request $request){
         if($request->isMethod('post')){
+
             $data=$request->all();
+            print_r($data);
+            print_r($_FILES['files']);
+            print_r('dhhdhhd');
+            exit;
+            $validator=Validator::make($request->all(), [
+                "title" => 'required',
+                "brand"=>'required',
+                "series"=>'required',
+                "models"=>'required',
+                "generation"=>'required|numeric',
+                'ram' => 'required|numeric',
+                "storage" => "required|numeric",
+                'price'=>"required|numeric",
+                "display"=>'required|numeric',
+                'discount_type' => 'required',
+                "image" => "required",
+
+            ])->validateWithBag('post');
+
+            
             $product=new Product();
             $product->title=$data['title'];
             $product->description=$data['description'];
@@ -48,7 +70,8 @@ class ProductController extends Controller
             $product->image=json_encode($pro);
             $product->save();
             //print_r('saved');
-            return redirect()->back();
+            //return redirect()->back();
+            return Response::json($validator);
             
 
         }

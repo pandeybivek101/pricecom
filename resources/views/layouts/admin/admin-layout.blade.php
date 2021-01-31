@@ -407,13 +407,13 @@
     <script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
     
     <script>
-        ClassicEditor.create( document.querySelector( '#desc' ) )
-        then( editor => {
-                    console.log( editor );
-            } )
-            .catch( error => {
-                    console.error( error );
-            } );
+        ClassicEditor.create( document.querySelector( '#desc' ) );
+        // then( editor => {
+        //             console.log( editor );
+        //     } )
+        //     .catch( error => {
+        //             console.error( error );
+        //     } );
 
 
         function alertify(){
@@ -442,7 +442,7 @@
 
 
 
-$('#ajaxform').on('submit', function(e) {
+/*$('#ajaxform').on('submit', function(e) {
     var action=$('#ajaxform').attr('action')
     e.preventDefault();
 
@@ -459,6 +459,8 @@ $('#ajaxform').on('submit', function(e) {
         processData:false,
 
         success: function() {
+            $('.errors').remove();
+            $('input').css("border-color", "rgba(0,0,0,.15)");
             $('input').val('');
             toastr.success('Product has been successfully added!', 'Thankyou!');
             
@@ -480,6 +482,7 @@ $('#ajaxform').on('submit', function(e) {
 
 });
 
+*/
 
 $('#editajax').on('submit', function(e) {
     var action=$('#editajax').attr('action')

@@ -63,10 +63,7 @@
                         </div>
 
                         @php
-                        
-                        $record= HomeController::fetch_data($common->product_url, $common->name, $common); 
-                        
-                        
+                        $record= HomeController::fetch_data($common->product_url, $common->name); 
                         @endphp
                         <div class='col-md-4'>
                             <div class='old-new' style='display:flex;'>

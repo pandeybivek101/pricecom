@@ -130,17 +130,17 @@
 
                         <div class="form-group row">
                         
-                            <div class="col-sm-12">
+                            <div class="col-sm-12 card-block">
                             <label>Image</label>
-                                <input type="file" id='imgdrop' class="form-control" name='image[]' multiple>
+                                <input type="file" id='imgdrop' class="" name="image[]"  multiple>
                             </div>
                         </div>
 
 
 
                         
+                        
 
-                        <!-- /.card-header -->
                         <div class="card-body pad" style='padding-left:0px; padding-right:0px;'>
                             <div class="mb-3">
                             
@@ -163,10 +163,14 @@
 @endsection
 
 
-   @section('css')
-   
-    @endsection
+@section('css')
+<!-- <link href="{{asset('assets/bower_components/jquery.filer/css/jquery.filer.css')}}" type="text/css" rel="stylesheet" />
+<link href="{{asset('assets/bower_components/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" type="text/css" rel="stylesheet" /> -->
+
+@endsection
     
 @section('js')
-
+<!-- <script src="{{asset('assets/bower_components/jquery.filer/js/jquery.filer.min.js')}}"></script>
+<script src="{{asset('assets/pages/filer/custom-filer.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/pages/filer/jquery.fileuploads.init.js')}}" type="text/javascript"></script> -->
 @endsection
