@@ -9,13 +9,25 @@ use App\Models\Product;
 use App\Models\Common;
 use Session;
 use Goutte;
+use Redirect,Response;
 
 class HomeController extends Controller
 {
     // 
     public function index(){
         $products=Product::all();
-        return view('home.index')->with(compact('products'));
+       return view('home.index')->with(compact('products'));
+       //return Response::json( $products );
+       //return response()->json($products, 200);
+    }
+
+
+    public function homeapi(){
+        $products=Product::all();
+        // return view('home.index')->with(compact('products'));
+        //return Response::json( $products );
+        return Response::json($products); 
+
     }
 
 
@@ -35,7 +47,7 @@ class HomeController extends Controller
 
 
     
-    public static function fetch_data($url, $site, Object $obj){
+    public static function fetch_data($url, $site){
 
        $crawler = Goutte::request('GET', $url);
 
@@ -75,11 +87,13 @@ class HomeController extends Controller
             break;
 
             case 'Thulo':
+
                 Session::forget('data');
                 self::crawling('.prices-container .ty-price', $crawler);
                 self::crawling('.prices-container .ty-strike', $crawler);
                 self::crawling('.prices-container .ty-save-price', $crawler);
                 return Session::get('data');
+                
             break;
 
             case "Sasto Deal":
@@ -110,6 +124,18 @@ class HomeController extends Controller
         Session::forget('data');
 
         return view('home.detail')->with(compact('product', 'commons'));
+    }
+
+
+    public function detailapi($id){
+        $product=Product::findorfail($id);
+        return Response::json($product);
+        //return view('home.detail')->with(compact('product', 'commons'));
+    }
+
+    public function commondetailapi($id){
+        $commons=Common::where('products_id', $id)->get();
+        return Response::json($commons);
     }
 
     public function dotan(){

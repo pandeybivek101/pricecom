@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', [HomeController::class, 'homeapi']);
+Route::get('/details/{id}', [HomeController::class, 'detailapi']);
+Route::get('/cdetails/{id}', [HomeController::class, 'commondetailapi']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 
 
 /*DB_CONNECTION=mysql

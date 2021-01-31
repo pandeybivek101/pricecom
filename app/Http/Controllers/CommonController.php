@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Common;
-
+use Validator;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller

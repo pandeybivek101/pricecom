@@ -1,4 +1,4 @@
-<!--<x-guest-layout>
+<!-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -45,21 +45,17 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>-->
+</x-guest-layout> -->
 
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from flatable.phoenixcoded.net/default/auth-normal-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 12:15:52 GMT -->
 
 <head>
     <title>Flat Able - Premium Admin Template by Phoenixcoded</title>
 
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -90,9 +86,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
+                @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
+        @endif
 
                     <div class="login-card card-block auth-body">
-                        <form class="md-float-material">
+                        <form class="md-float-material" method="POST" action="{{ route('login') }}">
+                        @csrf
                             <div class="text-center">
                                 <img src="assets/images/auth/logo.png" alt="logo.png">
                             </div>
@@ -104,18 +106,18 @@
                                 </div>
                                 <hr />
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                    <input type="email" name='email' class="form-control" placeholder="Your Email Address">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name='password' class="form-control" placeholder="Password">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" name="remember"  id="remember_me">
                                                 <span class="cr"><i
                                                         class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
                                                 <span class="text-inverse">Remember me</span>
@@ -123,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="forgot-password.html" class="text-right f-w-600 text-inverse"> Forgot
+                                        <a href="{{ route('password.request') }}" class="text-right f-w-600 text-inverse"> Forgot
                                             Your Password?</a>
                                     </div>
                                 </div>
@@ -158,49 +160,6 @@
     </section>
 
 
-    <!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-
-
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../bower_components/tether/dist/js/tether.min.js"></script>
@@ -222,6 +181,5 @@
     <script type="text/javascript" src="assets/js/common-pages.js"></script>
 </body>
 
-<!-- Mirrored from flatable.phoenixcoded.net/default/auth-normal-sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jan 2019 12:15:56 GMT -->
 
 </html>
