@@ -128,3 +128,6 @@ class BlogController extends Controller
         return redirect()->back();
     }
 }
+
+//end of destroy function
+
