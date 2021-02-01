@@ -125,10 +125,11 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
+        
         $blog = Blog::where('id', $id)->delete();
         return redirect()->back();
     }
 }
 
-//end of destroy function
+//end of destroy function//
 

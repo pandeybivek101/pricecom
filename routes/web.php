@@ -61,7 +61,7 @@ Route::group(['middleware'=>['auth']], function(){
     //for product in admin panel 
     Route::match(['get', 'post'], 'dashboard/add-product', [ProductController::class, 'add_product'])->name('add-product');
     Route::get('dashboard/view-product', [ProductController::class, 'view_product'])->name('view-product');
-    Route::match(['get', 'post'], 'dasbhoard/delete-product/{id}', [ProductController::class, 'delete_product'])->name('delete-product');
+    Route::delete('dasbhoard/delete-product', [ProductController::class, 'delete_product'])->name('delete-product');
     Route::match(['get', 'post'], 'dashboard/edit-product/{id}', [ProductController::class, 'edit_product'])->name('edit-product');
     Route::post('dashboard/update-product/', [ProductController::class, 'update_product'])->name('update-product');
     Route::get('dashboard/view-product/{id}', [ProductController::class, 'view_product_detail'])->name('view-product-detail');

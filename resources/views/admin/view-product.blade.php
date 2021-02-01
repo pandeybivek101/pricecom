@@ -73,7 +73,7 @@
                                             @php $i++ @endphp
                                             @php $class= $i%2 ==0 ? 'even' : 'odd'; @endphp
 
-                                            <tr role="row" class="@php echo $class; @endphp">
+                                            <tr role="row" id="row-{{$pro->id}}" class="@php echo $class; @endphp">
                                             <td>{{$pro->id}}</td>
                                                 <td>
                                                 
@@ -91,9 +91,9 @@
                                                         class="m-r-15 text-muted" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"><i
                                                             class="icofont icofont-ui-edit"></i></a>
-                                                    <a href="{{route('delete-product', $pro->id)}}" class="text-muted"
+                                                    <a href="{{route('delete-product')}}" class="delete text-muted"
                                                         data-toggle="tooltip" data-placement="top" title=""
-                                                        data-original-title="Delete" onclick="alertify();"><i
+                                                        data-original-title="Delete" data-id="{{$pro->id}}"><i
                                                             class="icofont icofont-delete-alt"></i></a>
                                                 </td>
                                             </tr>
@@ -127,4 +127,52 @@
 
 @endsection
 
+
+@section('js')
+
+<script>
+$('.delete').click(function(e){
+    e.preventDefault();
+    var id=$(this).attr('data-id');
+    var data={
+        'id':id,
+    }
+
+
+    Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+    if (result.isConfirmed) {
+
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:"DELETE",
+            data:data,
+            url:$(this).attr('href'),
+            success:function(){
+               $('#row-'+id).remove();
+            },
+            error:function(){
+                alert('error')
+            }
+
+        })
+        
+    }
+    })
+    
+})
+//
+
+</script>
+
+@endsection
 

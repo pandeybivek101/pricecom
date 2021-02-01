@@ -84,8 +84,16 @@ class ProductController extends Controller
         return view('admin.view-product')->with(compact('products'));
     }
 
-    public function delete_product($id){
+    /*public function delete_product($id){
         perform_delete($id, Product::class);
+    }*/
+
+    public function delete_product(Request $request){
+        $data=$request->all();
+        $id=$data['id'];
+        $pro=Product::where('id', $id)->delete();
+        $msg='deleted';
+        Response::json($msg);
     }
 
     public function edit_product($id){
